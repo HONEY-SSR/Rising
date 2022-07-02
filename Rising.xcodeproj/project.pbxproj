@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141B29E5286F1B43008F6FAE /* RisingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B29E4286F1B43008F6FAE /* RisingHeader.m */; };
 		14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB848284C9AE6004BCB5B /* AppDelegate.m */; };
 		14AAB84C284C9AE6004BCB5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB84B284C9AE6004BCB5B /* SceneDelegate.m */; };
 		14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB84E284C9AE6004BCB5B /* ViewController.m */; };
@@ -60,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		141B29E3286F1AC7008F6FAE /* RisingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingHeader.h; sourceTree = "<group>"; };
+		141B29E4286F1B43008F6FAE /* RisingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingHeader.m; sourceTree = "<group>"; };
 		14AAB844284C9AE6004BCB5B /* Rising.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rising.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AAB847284C9AE6004BCB5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14AAB848284C9AE6004BCB5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				14AAB84B284C9AE6004BCB5B /* SceneDelegate.m */,
 				14AAB84D284C9AE6004BCB5B /* ViewController.h */,
 				14AAB84E284C9AE6004BCB5B /* ViewController.m */,
+				141B29E3286F1AC7008F6FAE /* RisingHeader.h */,
+				141B29E4286F1B43008F6FAE /* RisingHeader.m */,
 				14AAB850284C9AE6004BCB5B /* Main.storyboard */,
 				14AAB853284C9AE7004BCB5B /* Assets.xcassets */,
 				14AAB855284C9AE7004BCB5B /* LaunchScreen.storyboard */,
@@ -318,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141B29E5286F1B43008F6FAE /* RisingHeader.m in Sources */,
 				14B9C34E284DFD1500D10EF2 /* RisingWidget.intentdefinition in Sources */,
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
 				14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */,
