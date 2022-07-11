@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141B29E5286F1B43008F6FAE /* RisingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B29E4286F1B43008F6FAE /* RisingHeader.m */; };
+		141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */; };
+		1470BE63287946200000C61E /* RisingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE62287946200000C61E /* RisingItem.m */; };
+		1470BE662879513C0000C61E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE652879513C0000C61E /* UIView+Frame.m */; };
+		1470BE692879521E0000C61E /* BanchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE682879521E0000C61E /* BanchItem.m */; };
+		1470BE6C287970E50000C61E /* RisingSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE6B287970E50000C61E /* RisingSegmentView.m */; };
+		1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE6E287BBB1A0000C61E /* RisingRouter.m */; };
+		1470BE72287BBB920000C61E /* RisingRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE71287BBB920000C61E /* RisingRouterRequest.m */; };
+		1470BE76287BC7130000C61E /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE75287BC7130000C61E /* testVC.m */; };
+		1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE7A287C46D10000C61E /* RisingUIKitExtention.m */; };
 		14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB848284C9AE6004BCB5B /* AppDelegate.m */; };
-		14AAB84C284C9AE6004BCB5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB84B284C9AE6004BCB5B /* SceneDelegate.m */; };
 		14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB84E284C9AE6004BCB5B /* ViewController.m */; };
-		14AAB852284C9AE6004BCB5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB850284C9AE6004BCB5B /* Main.storyboard */; };
 		14AAB854284C9AE7004BCB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB853284C9AE7004BCB5B /* Assets.xcassets */; };
 		14AAB857284C9AE7004BCB5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB855284C9AE7004BCB5B /* LaunchScreen.storyboard */; };
 		14AAB85A284C9AE7004BCB5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB859284C9AE7004BCB5B /* main.m */; };
@@ -19,13 +25,7 @@
 		14B9C331284DFCFD00D10EF2 /* IntentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B9C330284DFCFD00D10EF2 /* IntentViewController.m */; };
 		14B9C334284DFCFD00D10EF2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B9C332284DFCFD00D10EF2 /* MainInterface.storyboard */; };
 		14B9C338284DFCFD00D10EF2 /* RisingIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14B9C32A284DFCFD00D10EF2 /* RisingIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		14B9C343284DFD1400D10EF2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B9C342284DFD1400D10EF2 /* WidgetKit.framework */; };
-		14B9C345284DFD1400D10EF2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B9C344284DFD1400D10EF2 /* SwiftUI.framework */; };
-		14B9C348284DFD1400D10EF2 /* RisingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B9C347284DFD1400D10EF2 /* RisingWidget.swift */; };
-		14B9C34B284DFD1500D10EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B9C34A284DFD1500D10EF2 /* Assets.xcassets */; };
-		14B9C34D284DFD1500D10EF2 /* RisingWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 14B9C349284DFD1400D10EF2 /* RisingWidget.intentdefinition */; };
-		14B9C34E284DFD1500D10EF2 /* RisingWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 14B9C349284DFD1400D10EF2 /* RisingWidget.intentdefinition */; };
-		14B9C351284DFD1500D10EF2 /* RisingWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14B9C341284DFD1400D10EF2 /* RisingWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,6 @@
 			remoteGlobalIDString = 14B9C329284DFCFD00D10EF2;
 			remoteInfo = RisingIntent;
 		};
-		14B9C34F284DFD1500D10EF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14AAB83C284C9AE6004BCB5B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14B9C340284DFD1400D10EF2;
-			remoteInfo = RisingWidgetExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +45,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				14B9C351284DFD1500D10EF2 /* RisingWidgetExtension.appex in Embed App Extensions */,
 				14B9C338284DFCFD00D10EF2 /* RisingIntent.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -61,16 +53,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		141B29E3286F1AC7008F6FAE /* RisingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingHeader.h; sourceTree = "<group>"; };
-		141B29E4286F1B43008F6FAE /* RisingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingHeader.m; sourceTree = "<group>"; };
+		141B29E3286F1AC7008F6FAE /* RisingFoundationExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingFoundationExtention.h; sourceTree = "<group>"; };
+		141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingFoundationExtention.m; sourceTree = "<group>"; };
+		1470BE61287946200000C61E /* RisingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingItem.h; sourceTree = "<group>"; };
+		1470BE62287946200000C61E /* RisingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingItem.m; sourceTree = "<group>"; };
+		1470BE642879513C0000C61E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		1470BE652879513C0000C61E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		1470BE672879521E0000C61E /* BanchItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BanchItem.h; sourceTree = "<group>"; };
+		1470BE682879521E0000C61E /* BanchItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BanchItem.m; sourceTree = "<group>"; };
+		1470BE6A287970E50000C61E /* RisingSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingSegmentView.h; sourceTree = "<group>"; };
+		1470BE6B287970E50000C61E /* RisingSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentView.m; sourceTree = "<group>"; };
+		1470BE6D287BBB1A0000C61E /* RisingRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouter.h; sourceTree = "<group>"; };
+		1470BE6E287BBB1A0000C61E /* RisingRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouter.m; sourceTree = "<group>"; };
+		1470BE70287BBB920000C61E /* RisingRouterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterRequest.h; sourceTree = "<group>"; };
+		1470BE71287BBB920000C61E /* RisingRouterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterRequest.m; sourceTree = "<group>"; };
+		1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingHandlerProtocol.h; sourceTree = "<group>"; };
+		1470BE74287BC7130000C61E /* testVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testVC.h; sourceTree = "<group>"; };
+		1470BE75287BC7130000C61E /* testVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
+		1470BE7A287C46D10000C61E /* RisingUIKitExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingUIKitExtention.m; sourceTree = "<group>"; };
+		1470BE7C287C46DA0000C61E /* RisingUIKitExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingUIKitExtention.h; sourceTree = "<group>"; };
 		14AAB844284C9AE6004BCB5B /* Rising.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rising.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AAB847284C9AE6004BCB5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14AAB848284C9AE6004BCB5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14AAB84A284C9AE6004BCB5B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		14AAB84B284C9AE6004BCB5B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		14AAB84D284C9AE6004BCB5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		14AAB84E284C9AE6004BCB5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		14AAB851284C9AE6004BCB5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14AAB853284C9AE7004BCB5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14AAB856284C9AE7004BCB5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AAB858284C9AE7004BCB5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,13 +87,10 @@
 		14B9C330284DFCFD00D10EF2 /* IntentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentViewController.m; sourceTree = "<group>"; };
 		14B9C333284DFCFD00D10EF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		14B9C335284DFCFD00D10EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14B9C341284DFD1400D10EF2 /* RisingWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RisingWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B9C342284DFD1400D10EF2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		14B9C344284DFD1400D10EF2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		14B9C347284DFD1400D10EF2 /* RisingWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingWidget.swift; sourceTree = "<group>"; };
-		14B9C349284DFD1400D10EF2 /* RisingWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RisingWidget.intentdefinition; sourceTree = "<group>"; };
-		14B9C34A284DFD1500D10EF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14B9C34C284DFD1500D10EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14E8ED5B28718646006678B7 /* ClassWeekDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassWeekDictionary.h; sourceTree = "<group>"; };
+		14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassWeekDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,24 +109,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14B9C33E284DFD1400D10EF2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14B9C345284DFD1400D10EF2 /* SwiftUI.framework in Frameworks */,
-				14B9C343284DFD1400D10EF2 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1470BE78287C34360000C61E /* RisingRouter */ = {
+			isa = PBXGroup;
+			children = (
+				1470BE6D287BBB1A0000C61E /* RisingRouter.h */,
+				1470BE6E287BBB1A0000C61E /* RisingRouter.m */,
+				1470BE70287BBB920000C61E /* RisingRouterRequest.h */,
+				1470BE71287BBB920000C61E /* RisingRouterRequest.m */,
+				1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */,
+			);
+			path = RisingRouter;
+			sourceTree = "<group>";
+		};
+		1470BE79287C343F0000C61E /* RisingHeader */ = {
+			isa = PBXGroup;
+			children = (
+				141B29E3286F1AC7008F6FAE /* RisingFoundationExtention.h */,
+				141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */,
+				1470BE7C287C46DA0000C61E /* RisingUIKitExtention.h */,
+				1470BE7A287C46D10000C61E /* RisingUIKitExtention.m */,
+			);
+			path = RisingHeader;
+			sourceTree = "<group>";
+		};
 		14AAB83B284C9AE6004BCB5B = {
 			isa = PBXGroup;
 			children = (
 				14AAB846284C9AE6004BCB5B /* Rising */,
 				14B9C32E284DFCFD00D10EF2 /* RisingIntent */,
-				14B9C346284DFD1400D10EF2 /* RisingWidget */,
 				14B9C32B284DFCFD00D10EF2 /* Frameworks */,
 				14AAB845284C9AE6004BCB5B /* Products */,
 			);
@@ -134,7 +150,6 @@
 			children = (
 				14AAB844284C9AE6004BCB5B /* Rising.app */,
 				14B9C32A284DFCFD00D10EF2 /* RisingIntent.appex */,
-				14B9C341284DFD1400D10EF2 /* RisingWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,13 +159,22 @@
 			children = (
 				14AAB847284C9AE6004BCB5B /* AppDelegate.h */,
 				14AAB848284C9AE6004BCB5B /* AppDelegate.m */,
-				14AAB84A284C9AE6004BCB5B /* SceneDelegate.h */,
-				14AAB84B284C9AE6004BCB5B /* SceneDelegate.m */,
 				14AAB84D284C9AE6004BCB5B /* ViewController.h */,
 				14AAB84E284C9AE6004BCB5B /* ViewController.m */,
-				141B29E3286F1AC7008F6FAE /* RisingHeader.h */,
-				141B29E4286F1B43008F6FAE /* RisingHeader.m */,
-				14AAB850284C9AE6004BCB5B /* Main.storyboard */,
+				1470BE74287BC7130000C61E /* testVC.h */,
+				1470BE75287BC7130000C61E /* testVC.m */,
+				1470BE78287C34360000C61E /* RisingRouter */,
+				1470BE79287C343F0000C61E /* RisingHeader */,
+				1470BE6A287970E50000C61E /* RisingSegmentView.h */,
+				1470BE6B287970E50000C61E /* RisingSegmentView.m */,
+				1470BE61287946200000C61E /* RisingItem.h */,
+				1470BE62287946200000C61E /* RisingItem.m */,
+				1470BE672879521E0000C61E /* BanchItem.h */,
+				1470BE682879521E0000C61E /* BanchItem.m */,
+				1470BE642879513C0000C61E /* UIView+Frame.h */,
+				1470BE652879513C0000C61E /* UIView+Frame.m */,
+				14E8ED5B28718646006678B7 /* ClassWeekDictionary.h */,
+				14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */,
 				14AAB853284C9AE7004BCB5B /* Assets.xcassets */,
 				14AAB855284C9AE7004BCB5B /* LaunchScreen.storyboard */,
 				14AAB858284C9AE7004BCB5B /* Info.plist */,
@@ -180,17 +204,6 @@
 			path = RisingIntent;
 			sourceTree = "<group>";
 		};
-		14B9C346284DFD1400D10EF2 /* RisingWidget */ = {
-			isa = PBXGroup;
-			children = (
-				14B9C347284DFD1400D10EF2 /* RisingWidget.swift */,
-				14B9C349284DFD1400D10EF2 /* RisingWidget.intentdefinition */,
-				14B9C34A284DFD1500D10EF2 /* Assets.xcassets */,
-				14B9C34C284DFD1500D10EF2 /* Info.plist */,
-			);
-			path = RisingWidget;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,7 +220,6 @@
 			);
 			dependencies = (
 				14B9C337284DFCFD00D10EF2 /* PBXTargetDependency */,
-				14B9C350284DFD1500D10EF2 /* PBXTargetDependency */,
 			);
 			name = Rising;
 			productName = Rising;
@@ -231,23 +243,6 @@
 			productReference = 14B9C32A284DFCFD00D10EF2 /* RisingIntent.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		14B9C340284DFD1400D10EF2 /* RisingWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14B9C352284DFD1500D10EF2 /* Build configuration list for PBXNativeTarget "RisingWidgetExtension" */;
-			buildPhases = (
-				14B9C33D284DFD1400D10EF2 /* Sources */,
-				14B9C33E284DFD1400D10EF2 /* Frameworks */,
-				14B9C33F284DFD1400D10EF2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RisingWidgetExtension;
-			productName = RisingWidgetExtension;
-			productReference = 14B9C341284DFD1400D10EF2 /* RisingWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,9 +257,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					14B9C329284DFCFD00D10EF2 = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					14B9C340284DFD1400D10EF2 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -284,7 +276,6 @@
 			targets = (
 				14AAB843284C9AE6004BCB5B /* Rising */,
 				14B9C329284DFCFD00D10EF2 /* RisingIntent */,
-				14B9C340284DFD1400D10EF2 /* RisingWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -296,7 +287,6 @@
 			files = (
 				14AAB857284C9AE7004BCB5B /* LaunchScreen.storyboard in Resources */,
 				14AAB854284C9AE7004BCB5B /* Assets.xcassets in Resources */,
-				14AAB852284C9AE6004BCB5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +298,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14B9C33F284DFD1400D10EF2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14B9C34B284DFD1500D10EF2 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,12 +305,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				141B29E5286F1B43008F6FAE /* RisingHeader.m in Sources */,
-				14B9C34E284DFD1500D10EF2 /* RisingWidget.intentdefinition in Sources */,
+				141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */,
+				1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */,
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
+				1470BE72287BBB920000C61E /* RisingRouterRequest.m in Sources */,
+				1470BE662879513C0000C61E /* UIView+Frame.m in Sources */,
+				1470BE63287946200000C61E /* RisingItem.m in Sources */,
 				14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */,
+				1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */,
+				14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */,
+				1470BE76287BC7130000C61E /* testVC.m in Sources */,
+				1470BE6C287970E50000C61E /* RisingSegmentView.m in Sources */,
 				14AAB85A284C9AE7004BCB5B /* main.m in Sources */,
-				14AAB84C284C9AE6004BCB5B /* SceneDelegate.m in Sources */,
+				1470BE692879521E0000C61E /* BanchItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,15 +329,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14B9C33D284DFD1400D10EF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14B9C34D284DFD1500D10EF2 /* RisingWidget.intentdefinition in Sources */,
-				14B9C348284DFD1400D10EF2 /* RisingWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -357,22 +337,9 @@
 			target = 14B9C329284DFCFD00D10EF2 /* RisingIntent */;
 			targetProxy = 14B9C336284DFCFD00D10EF2 /* PBXContainerItemProxy */;
 		};
-		14B9C350284DFD1500D10EF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14B9C340284DFD1400D10EF2 /* RisingWidgetExtension */;
-			targetProxy = 14B9C34F284DFD1500D10EF2 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14AAB850284C9AE6004BCB5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14AAB851284C9AE6004BCB5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		14AAB855284C9AE7004BCB5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -496,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -507,7 +474,6 @@
 		14AAB85E284C9AE7004BCB5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,7 +483,7 @@
 				INFOPLIST_FILE = Rising/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,7 +501,6 @@
 		14AAB85F284C9AE7004BCB5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,7 +510,7 @@
 				INFOPLIST_FILE = Rising/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,64 +573,6 @@
 			};
 			name = Release;
 		};
-		14B9C353284DFD1500D10EF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 727CVV9PLJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RisingWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RisingWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SSR.Rising.RisingWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		14B9C354284DFD1500D10EF2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 727CVV9PLJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RisingWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RisingWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SSR.Rising.RisingWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -692,15 +599,6 @@
 			buildConfigurations = (
 				14B9C33A284DFCFD00D10EF2 /* Debug */,
 				14B9C33B284DFCFD00D10EF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14B9C352284DFD1500D10EF2 /* Build configuration list for PBXNativeTarget "RisingWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14B9C353284DFD1500D10EF2 /* Debug */,
-				14B9C354284DFD1500D10EF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

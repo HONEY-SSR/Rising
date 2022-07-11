@@ -1,14 +1,14 @@
 //
-//  RisingHeader.m
+//  RisingFoundationExtention.m
 //  Rising
 //
 //  Created by SSR on 2022/7/1.
 //
 
 #import <Foundation/Foundation.h>
-#import "RisingHeader.h"
+#import "RisingFoundationExtention.h"
 
-void RisingDetailLog(RisingLogType R_, const char *__func) {
+void RisingTypeLog(RisingLogType R_) {
     switch (R_) {
         case R_defualt:
             printf("⚫️");
@@ -29,5 +29,4 @@ void RisingDetailLog(RisingLogType R_, const char *__func) {
             printf("🟣");
             break;
     }
-    printf("%s", __func);
 }
