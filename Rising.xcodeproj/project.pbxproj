@@ -26,6 +26,7 @@
 		14B9C334284DFCFD00D10EF2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B9C332284DFCFD00D10EF2 /* MainInterface.storyboard */; };
 		14B9C338284DFCFD00D10EF2 /* RisingIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14B9C32A284DFCFD00D10EF2 /* RisingIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */; };
+		14F777D4287D0ED300358D72 /* RisingSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D3287D0ED300358D72 /* RisingSegmentController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		14B9C344284DFD1400D10EF2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		14E8ED5B28718646006678B7 /* ClassWeekDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassWeekDictionary.h; sourceTree = "<group>"; };
 		14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassWeekDictionary.m; sourceTree = "<group>"; };
+		14F777D2287D0ED300358D72 /* RisingSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingSegmentController.h; sourceTree = "<group>"; };
+		14F777D3287D0ED300358D72 /* RisingSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				14AAB84E284C9AE6004BCB5B /* ViewController.m */,
 				1470BE74287BC7130000C61E /* testVC.h */,
 				1470BE75287BC7130000C61E /* testVC.m */,
+				14F777D2287D0ED300358D72 /* RisingSegmentController.h */,
+				14F777D3287D0ED300358D72 /* RisingSegmentController.m */,
 				1470BE78287C34360000C61E /* RisingRouter */,
 				1470BE79287C343F0000C61E /* RisingHeader */,
 				1470BE6A287970E50000C61E /* RisingSegmentView.h */,
@@ -316,6 +321,7 @@
 				14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */,
 				1470BE76287BC7130000C61E /* testVC.m in Sources */,
 				1470BE6C287970E50000C61E /* RisingSegmentView.m in Sources */,
+				14F777D4287D0ED300358D72 /* RisingSegmentController.m in Sources */,
 				14AAB85A284C9AE7004BCB5B /* main.m in Sources */,
 				1470BE692879521E0000C61E /* BanchItem.m in Sources */,
 			);
