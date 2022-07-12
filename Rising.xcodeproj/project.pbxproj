@@ -27,6 +27,8 @@
 		14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */; };
 		14F777D4287D0ED300358D72 /* RisingSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D3287D0ED300358D72 /* RisingSegmentController.m */; };
 		14F777D7287D5EC700358D72 /* RisingSegmentDefaultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */; };
+		14F777DA287DA8D500358D72 /* RisingRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D9287DA8D500358D72 /* RisingRouterRequest.m */; };
+		14F777DD287DA9C600358D72 /* RisingRouterError.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777DC287DA9C600358D72 /* RisingRouterError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,10 @@
 		14F777D3287D0ED300358D72 /* RisingSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentController.m; sourceTree = "<group>"; };
 		14F777D5287D5EC700358D72 /* RisingSegmentDefaultItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingSegmentDefaultItem.h; sourceTree = "<group>"; };
 		14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentDefaultItem.m; sourceTree = "<group>"; };
+		14F777D8287DA8D500358D72 /* RisingRouterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterRequest.h; sourceTree = "<group>"; };
+		14F777D9287DA8D500358D72 /* RisingRouterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterRequest.m; sourceTree = "<group>"; };
+		14F777DB287DA9C600358D72 /* RisingRouterError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterError.h; sourceTree = "<group>"; };
+		14F777DC287DA9C600358D72 /* RisingRouterError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,10 @@
 				1470BE6D287BBB1A0000C61E /* RisingRouter.h */,
 				1470BE6E287BBB1A0000C61E /* RisingRouter.m */,
 				1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */,
+				14F777D8287DA8D500358D72 /* RisingRouterRequest.h */,
+				14F777D9287DA8D500358D72 /* RisingRouterRequest.m */,
+				14F777DB287DA9C600358D72 /* RisingRouterError.h */,
+				14F777DC287DA9C600358D72 /* RisingRouterError.m */,
 			);
 			path = RisingRouter;
 			sourceTree = "<group>";
@@ -315,6 +325,7 @@
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
 				1470BE662879513C0000C61E /* UIView+Frame.m in Sources */,
 				1470BE63287946200000C61E /* RisingItem.m in Sources */,
+				14F777DD287DA9C600358D72 /* RisingRouterError.m in Sources */,
 				14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */,
 				1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */,
 				14F777D7287D5EC700358D72 /* RisingSegmentDefaultItem.m in Sources */,
@@ -324,6 +335,7 @@
 				14F777D4287D0ED300358D72 /* RisingSegmentController.m in Sources */,
 				14AAB85A284C9AE7004BCB5B /* main.m in Sources */,
 				1470BE692879521E0000C61E /* BanchItem.m in Sources */,
+				14F777DA287DA8D500358D72 /* RisingRouterRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

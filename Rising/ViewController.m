@@ -28,9 +28,14 @@
 @implementation ViewController
 
 - (void)push:(UIButton *)sender {
-    RisingLog(R_defualt, @"er");
-    [RisingRouter.router handleRequest:@"video" paramater:@{@"aaa": @"rising and ssr"} completion:^(NSDictionary * _Nonnull dic) {
-            
+    [RisingRouter.router
+     handleRequest:[RisingRouterRequest
+                    requestWithRouterPath:@"video"
+                    paramaters:@{@"aaa":@"rising"}]
+     completion:^(RisingRouterError * _Nonnull error, BOOL pushed) {
+        if (error) {
+            RisingLog(R_error, @"错误：%lu", error.errorCode);
+        }
     }];
 }
 

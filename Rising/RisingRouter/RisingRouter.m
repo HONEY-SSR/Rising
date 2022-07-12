@@ -6,17 +6,25 @@
 //
 
 #import "RisingRouter.h"
+
 #import <objc/runtime.h>
 
+/// 单例
 static RisingRouter *_router;
+
+#pragma mark - RisingRouter ()
 
 @interface RisingRouter ()
 
-@property (nonatomic, strong) NSMutableDictionary *moduleDic;
+@property (nonatomic, strong) NSMutableDictionary <NSString *, Class> *moduleDic;
 
 @end
 
+#pragma mark - RisingRouter
+
 @implementation RisingRouter
+
+#pragma mark - Life cycle
 
 - (instancetype)init {
     self = [super init];
@@ -26,52 +34,24 @@ static RisingRouter *_router;
         Class *classes = (Class *)malloc(sizeof(Class) * count);
         objc_getClassList(classes, count);
         Protocol *p_handler = @protocol(RisingHandlerProtocol);
+        // ???: 命名存的方法是否有待加强
         for (int i = 0 ; i < count ; ++i) {
             Class cls = classes[i];
-            for (Class thisCls = cls; nil != thisCls;
+            for (Class thisCls = cls; thisCls;
                 thisCls = class_getSuperclass(thisCls)) {
                 
-                if (!class_conformsToProtocol(thisCls, p_handler))
+                if (!class_conformsToProtocol(thisCls, p_handler)) {
                     continue;
-                
+                }
                 self.moduleDic[[(id<RisingHandlerProtocol>)thisCls routerPath]] = thisCls;
                 break;
             }
         }
-        if (classes)
+        if (classes) {
             free(classes);
+        }
     }
     return self;
-}
-
-- (void)handleURL:(NSURL *)url completion:(void (^)(NSDictionary * _Nonnull))completion {
-    if (!url) {
-        NSAssert(url, @"url is nil, have a check");
-        return;
-    }
-    
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:url.absoluteString];
-    [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.value&&obj.name) {
-            [params setObject:obj.value forKey:obj.name];
-        }
-    }];
-    
-    // !!!: requestPath根据需求自定义，最终肯定是一个代理里面的东西
-    NSString *requestPath = [url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
-    
-    [self handleRequest:requestPath paramater:params completion:completion];
-}
-
-- (void)handleRequest:(NSString *)requestPath paramater:(NSDictionary *)paramater completion:(void (^)(NSDictionary * _Nonnull))completion {
-    Class <RisingHandlerProtocol> handlerObj = self.moduleDic[requestPath];
-    
-    if (handlerObj) {
-        [handlerObj handleRequestWithParameters:paramater viewController:UIApplication.topViewController completionHandler:completion];
-    } else {
-        NSAssert(handlerObj, @"handlerObj is nil");
-    }
 }
 
 + (RisingRouter *)router {
@@ -82,5 +62,33 @@ static RisingRouter *_router;
     return _router;
 }
 
+#pragma mark - Method
+
+- (void)handleRequest:(RisingRouterRequest *)request completion:(RisingRouterHandler)completion {
+    
+    [self handleRequest:request fromViewController:UIApplication.topViewController completion:completion];
+}
+
+- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandler)completion {
+    
+    Class <RisingHandlerProtocol> handlerObj = self.moduleDic[request.routerPath];
+    
+    if (handlerObj) {
+        __block BOOL s_pushed = false;
+        __block RisingRouterError *s_error;
+        
+        [handlerObj handleRequestWithParameters:request.paramaters viewController:vc completion:^(RisingRouterError * _Nullable error, BOOL pushed){
+            s_error = error;
+            s_pushed = pushed;
+        }];
+        
+        if (completion) {
+            completion([s_error errorAppendRequest:request], s_pushed);
+        }
+    } else {
+        NSAssert(handlerObj, @"无Class响应");
+    }
+    // TODO: 通过" / "层级跳转实现
+}
 
 @end
