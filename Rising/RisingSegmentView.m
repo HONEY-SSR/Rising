@@ -52,6 +52,9 @@ typedef struct {
 /// dataSourseFlags
 @property (nonatomic) RisingSegmentViewDataSourseFlags dataSourseFlags;
 
+/// 长按的手势
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPress;
+
 @end
 
 #pragma mark - RisingSegmentView
@@ -76,6 +79,10 @@ typedef struct {
 }
 
 #pragma mark - Method
+
+- (void)registerSegmentClass:(Class)segmentClass forSegmentWithReuseIdentifier:(NSString *)identifier {
+    [self.cview registerClass:segmentClass forCellWithReuseIdentifier:identifier];
+}
 
 // !!!: 未完成
 
@@ -116,9 +123,17 @@ typedef struct {
 - (UICollectionView *)cview {
     if (_cview == nil) {
         _cview = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
+        
         _cview.delegate = self;
     }
     return _cview;
+}
+
+- (UILongPressGestureRecognizer *)longPress {
+    if (_longPress == nil) {
+        _longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    }
+    return _longPress;
 }
 
 #pragma mark - Setter
@@ -155,6 +170,18 @@ typedef struct {
     [dataSourse performSelector:@selector(risingSegmentView:moveSegmentAtIndex:toIndex:)];
 }
 
+- (void)setNeedLongPressToDrag:(BOOL)needLongPressToDrag {
+    if (_needLongPressToDrag == needLongPressToDrag) {
+        return;
+    }
+    
+    if (needLongPressToDrag) {
+        [self.cview addGestureRecognizer:self.longPress];
+    } else {
+        [self.cview removeGestureRecognizer:self.longPress];
+    }
+}
+
 #pragma mark - <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -163,18 +190,19 @@ typedef struct {
     }
 }
 
-- (NSIndexPath *)collectionView:(UICollectionView *)collectionView targetIndexPathForMoveFromItemAtIndexPath:(NSIndexPath *)currentIndexPath toProposedIndexPath:(NSIndexPath *)proposedIndexPath {
-    return [NSIndexPath indexPathWithIndex:3];
-}
-
 #pragma mark - <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return [self.dataSourse numberOfSegmentIn:self];
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"" forIndexPath:indexPath];
+    if (self.dataSourseFlags.risingSegmentView_segmentViewAtIndex) {
+        return [self.dataSourse risingSegmentView:self segmentViewAtIndex:indexPath.item];
+    }
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+    
     return cell;
 }
 
@@ -191,9 +219,7 @@ typedef struct {
 #pragma mark - <UIScrollViewDelegate>
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if () {
-        <#statements#>
-    }
+    
 }
 
 @end

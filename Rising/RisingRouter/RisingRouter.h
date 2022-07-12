@@ -7,7 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RisingRouterRequest.h"
+#import "RisingUIKitExtention.h"
+
+#import "RisingHandlerProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,15 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)new NS_UNAVAILABLE;
 
-- (void)handleRequest:(RisingRouterRequest *)request completionHandler:(RisingRouterCompletionHandler)handler;
+//- (void)handleRequest:(RisingRouterRequest *)request completionHandler:(RisingRouterCompletionHandler)handler;
 
-@end
+- (void)handleURL:(NSURL *)url completion:(void (^ _Nullable) (NSDictionary *dic))completion;
 
-@interface UIApplication (RisingRouter)
-
-@property (nonatomic, readonly, class) UIViewController *topViewController;
-
-+ (UIViewController *)topViewControllerWithBase:(UIViewController *)VC;
+- (void)handleRequest:(NSString *)requestPath paramater:(NSDictionary *)paramater completion:(void (^ _Nullable) (NSDictionary *dic))completion;
 
 @end
 

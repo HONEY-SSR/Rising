@@ -17,7 +17,7 @@ typedef void(^RisingRouterCompletionHandler)(id _Nullable result, NSError * _Nul
 
 @property (nonatomic, readonly)NSString *routerPath;
 
-+ (void)handleRequestWithParameters:(nullable RisingParameters)parameters viewController:(UIViewController *)vc completionHandler:(nullable RisingRouterCompletionHandler)handler;
++ (void)handleRequestWithParameters:(nullable RisingParameters)parameters viewController:(UIViewController *)vc completionHandler:(void (^ _Nullable) (NSDictionary *dic))handler;
 
 @end
 

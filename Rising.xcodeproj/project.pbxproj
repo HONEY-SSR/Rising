@@ -13,7 +13,6 @@
 		1470BE692879521E0000C61E /* BanchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE682879521E0000C61E /* BanchItem.m */; };
 		1470BE6C287970E50000C61E /* RisingSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE6B287970E50000C61E /* RisingSegmentView.m */; };
 		1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE6E287BBB1A0000C61E /* RisingRouter.m */; };
-		1470BE72287BBB920000C61E /* RisingRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE71287BBB920000C61E /* RisingRouterRequest.m */; };
 		1470BE76287BC7130000C61E /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE75287BC7130000C61E /* testVC.m */; };
 		1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE7A287C46D10000C61E /* RisingUIKitExtention.m */; };
 		14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB848284C9AE6004BCB5B /* AppDelegate.m */; };
@@ -27,6 +26,7 @@
 		14B9C338284DFCFD00D10EF2 /* RisingIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14B9C32A284DFCFD00D10EF2 /* RisingIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */; };
 		14F777D4287D0ED300358D72 /* RisingSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D3287D0ED300358D72 /* RisingSegmentController.m */; };
+		14F777D7287D5EC700358D72 /* RisingSegmentDefaultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +66,6 @@
 		1470BE6B287970E50000C61E /* RisingSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentView.m; sourceTree = "<group>"; };
 		1470BE6D287BBB1A0000C61E /* RisingRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouter.h; sourceTree = "<group>"; };
 		1470BE6E287BBB1A0000C61E /* RisingRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouter.m; sourceTree = "<group>"; };
-		1470BE70287BBB920000C61E /* RisingRouterRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterRequest.h; sourceTree = "<group>"; };
-		1470BE71287BBB920000C61E /* RisingRouterRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterRequest.m; sourceTree = "<group>"; };
 		1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingHandlerProtocol.h; sourceTree = "<group>"; };
 		1470BE74287BC7130000C61E /* testVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testVC.h; sourceTree = "<group>"; };
 		1470BE75287BC7130000C61E /* testVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
@@ -94,6 +92,8 @@
 		14E8ED5C28718646006678B7 /* ClassWeekDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassWeekDictionary.m; sourceTree = "<group>"; };
 		14F777D2287D0ED300358D72 /* RisingSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingSegmentController.h; sourceTree = "<group>"; };
 		14F777D3287D0ED300358D72 /* RisingSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentController.m; sourceTree = "<group>"; };
+		14F777D5287D5EC700358D72 /* RisingSegmentDefaultItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingSegmentDefaultItem.h; sourceTree = "<group>"; };
+		14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentDefaultItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +120,6 @@
 			children = (
 				1470BE6D287BBB1A0000C61E /* RisingRouter.h */,
 				1470BE6E287BBB1A0000C61E /* RisingRouter.m */,
-				1470BE70287BBB920000C61E /* RisingRouterRequest.h */,
-				1470BE71287BBB920000C61E /* RisingRouterRequest.m */,
 				1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */,
 			);
 			path = RisingRouter;
@@ -172,6 +170,8 @@
 				1470BE79287C343F0000C61E /* RisingHeader */,
 				1470BE6A287970E50000C61E /* RisingSegmentView.h */,
 				1470BE6B287970E50000C61E /* RisingSegmentView.m */,
+				14F777D5287D5EC700358D72 /* RisingSegmentDefaultItem.h */,
+				14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */,
 				1470BE61287946200000C61E /* RisingItem.h */,
 				1470BE62287946200000C61E /* RisingItem.m */,
 				1470BE672879521E0000C61E /* BanchItem.h */,
@@ -313,11 +313,11 @@
 				141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */,
 				1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */,
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
-				1470BE72287BBB920000C61E /* RisingRouterRequest.m in Sources */,
 				1470BE662879513C0000C61E /* UIView+Frame.m in Sources */,
 				1470BE63287946200000C61E /* RisingItem.m in Sources */,
 				14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */,
 				1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */,
+				14F777D7287D5EC700358D72 /* RisingSegmentDefaultItem.m in Sources */,
 				14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */,
 				1470BE76287BC7130000C61E /* testVC.m in Sources */,
 				1470BE6C287970E50000C61E /* RisingSegmentView.m in Sources */,

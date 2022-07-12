@@ -29,9 +29,8 @@
 
 - (void)push:(UIButton *)sender {
     RisingLog(R_defualt, @"er");
-    RisingRouterRequest *request = [[RisingRouterRequest alloc] initWithPath:@"video" parameters:@{@"video_id":@"2021",@"aaa":@"aaa"}];
-    [RisingRouter.router handleRequest:request completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-        
+    [RisingRouter.router handleRequest:@"video" paramater:@{@"aaa": @"rising and ssr"} completion:^(NSDictionary * _Nonnull dic) {
+            
     }];
 }
 

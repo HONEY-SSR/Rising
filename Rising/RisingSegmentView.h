@@ -5,11 +5,6 @@
 //  Created by SSR on 2022/7/9.
 //
 
-/**
- * 绑定TableView可实现Section级别联动（竖向）
- * 绑定CollectionView可实现Scroll级别联动（横向）
- */
-
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -74,18 +69,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// datasourse代理
 @property (nonatomic, weak) id <RisingSegmentViewDataSourse> dataSourse;
 
-/// 绑定一个ScrollView，绑定TableView会以Section为主，绑定CollectionView直接以横向为主
-@property (nonatomic, weak) UIScrollView *bindScrollView;
-
 /// 会跟随一起改变
 @property (nonatomic, strong, null_resettable) UIView *backgroundView;
 
 /// 是否跟随绑定的而行走，默认YES，会让bindScrollView同时scroll
 @property (nonatomic) BOOL bindScrollAutoScroll;
 
-/// 选中的视图最左边距离自己 本身最大距离（当然条件是可以滑动（才看得出效果））
-/// 同时注意，当自己作为Scroll滑了后，再滑bindScroll会导致自己并没做出反应
-/// 请在合适的地方掉用autoLeftWithAnimated:
+/// 是否需要长按去拖，默认NO
+@property (nonatomic) BOOL needLongPressToDrag;
+
+/// 选中的视图最左边距离自己本身最大距离（当然条件是可以滑动（才看得出效果））
+/// 请在合适的地方掉用autoLeftWithAnimated:使视图达到视觉效果
 @property (nonatomic) CGFloat selectedAutoLeft;
 
 // MARK: Life cycle
@@ -96,12 +90,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)new NS_UNAVAILABLE;
 
-// MARK: Method
-
 /// 根据frame和layout确定
 /// @param frame 自己的大小，也是collectionview的大小
 /// @param layout collectionview的高级布局形式
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout;
+
+// MARK: Method
+
+/// 配合dataSourse的segmentViewAtIndex使用
+/// @param segmentClass uicollectionviewcell类
+/// @param identifier 类的名字
+- (void)registerSegmentClass:(nullable Class)segmentClass forSegmentWithReuseIdentifier:(NSString *)identifier;
 
 /// 自动滑到seletedIndex的selectedAutoLeft位置
 /// @param animated 是否需要动画
