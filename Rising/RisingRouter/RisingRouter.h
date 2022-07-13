@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 路由的类路由后可选择接受回掉，
 typedef void(^RisingRouterHandleBlock)(RisingRouterRequest *request, BOOL pushed, NSError* _Nullable error);
 
+#pragma mark - RisingRouter
+
 @interface RisingRouter : NSObject
 
 /// 单例Router

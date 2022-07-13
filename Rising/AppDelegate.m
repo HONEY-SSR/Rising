@@ -26,4 +26,15 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    if (!url) {
+        return  NO;
+    }
+    
+    NSString *urlStr = url.absoluteString;
+    NSLog(@"handleOpenURL:%@",urlStr);
+    
+    return YES;
+}
+
 @end

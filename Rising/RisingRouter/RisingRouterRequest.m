@@ -7,6 +7,8 @@
 
 #import "RisingRouterRequest.h"
 
+#pragma mark - RisingRouterRequest
+
 @implementation RisingRouterRequest
 
 + (instancetype)requestWithURL:(NSURL *)url {

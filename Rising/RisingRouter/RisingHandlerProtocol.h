@@ -13,10 +13,12 @@
 
 #import "RisingRouterRequest.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// 被路由的类可以选择回掉的Block，告知路由类相关的信息
 typedef void(^RisingRouterCompletionBlock)(BOOL pushed, NSError * _Nullable error);
 
-NS_ASSUME_NONNULL_BEGIN
+#pragma mark - RisingHandlerProtocol
 
 @protocol RisingHandlerProtocol <NSObject>
 
