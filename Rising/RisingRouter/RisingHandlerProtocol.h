@@ -9,12 +9,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RisingFoundationExtention.h"
+
 #import "RisingRouterRequest.h"
 
-#import "RisingRouterError.h"
-
-/// 传递error，和是否被pushed
-typedef void(^RisingRouterErrorBlock)(RisingRouterError * _Nullable error, BOOL pushed);
+/// 被路由的类可以选择回掉的Block，告知路由类相关的信息
+typedef void(^RisingRouterCompletionBlock)(BOOL pushed, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 作为被路由的名称，做到不重复，且在文档集中必须提及出来
 @property (nonatomic, readonly, class) NSString *routerPath;
 
-/// 被路由后执行的方法，可在内部实现跳转到自己VC
+/// 被路由后执行的响应方法，可在内部实现跳转到自己VC
 /// @param parameters 参数
 /// @param vc 从哪个vc来的
 /// @param handler 是否传回告知相关信息
-+ (void)handleRequestWithParameters:(nullable NSDictionary *)parameters viewController:(UIViewController *)vc completion:(_Nullable RisingRouterErrorBlock)handler;
++ (void)responseRequestWithParameters:(nullable NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(_Nullable RisingRouterCompletionBlock)handler;
 
 @end
 

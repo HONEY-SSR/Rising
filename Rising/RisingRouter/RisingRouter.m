@@ -34,7 +34,7 @@ static RisingRouter *_router;
         Class *classes = (Class *)malloc(sizeof(Class) * count);
         objc_getClassList(classes, count);
         Protocol *p_handler = @protocol(RisingHandlerProtocol);
-        // ???: 命名存的方法是否有待加强
+        // ???: 存routerPath的方法是否有待加强
         for (int i = 0 ; i < count ; ++i) {
             Class cls = classes[i];
             for (Class thisCls = cls; thisCls;
@@ -64,26 +64,26 @@ static RisingRouter *_router;
 
 #pragma mark - Method
 
-- (void)handleRequest:(RisingRouterRequest *)request completion:(RisingRouterHandler)completion {
+- (void)handleRequest:(RisingRouterRequest *)request complition:(RisingRouterHandleBlock)completion {
     
     [self handleRequest:request fromViewController:UIApplication.topViewController completion:completion];
 }
 
-- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandler)completion {
+- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandleBlock)completion {
     
     Class <RisingHandlerProtocol> handlerObj = self.moduleDic[request.routerPath];
     
     if (handlerObj) {
-        __block BOOL s_pushed = false;
-        __block RisingRouterError *s_error;
+        __block BOOL s_pushed;
+        __block NSError *s_error;
         
-        [handlerObj handleRequestWithParameters:request.paramaters viewController:vc completion:^(RisingRouterError * _Nullable error, BOOL pushed){
-            s_error = error;
+        [handlerObj responseRequestWithParameters:request.paramaters fromViewController:vc completion:^(BOOL pushed, NSError * _Nullable error){
             s_pushed = pushed;
+            s_error = error;
         }];
         
         if (completion) {
-            completion([s_error errorAppendRequest:request], s_pushed);
+            completion(request, s_pushed, s_error);
         }
     } else {
         NSAssert(handlerObj, @"无Class响应");

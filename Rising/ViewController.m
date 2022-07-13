@@ -29,12 +29,18 @@
 
 - (void)push:(UIButton *)sender {
     [RisingRouter.router
-     handleRequest:[RisingRouterRequest
-                    requestWithRouterPath:@"video"
-                    paramaters:@{@"aaa":@"rising"}]
-     completion:^(RisingRouterError * _Nonnull error, BOOL pushed) {
+     handleRequest:
+         [RisingRouterRequest
+          requestWithRouterPath:@"video"
+          paramaters:@{
+            @"aa" : @"rising"
+         }]
+     complition:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
         if (error) {
-            RisingLog(R_error, @"错误：%lu", error.errorCode);
+            RisingLog(R_error, @"失败%@", error);
+        }
+        if (pushed) {
+            RisingLog(R_success, @"跳转成功");
         }
     }];
 }

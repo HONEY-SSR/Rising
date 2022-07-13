@@ -16,11 +16,10 @@
 
 #import "RisingRouterRequest.h"
 
-#import "RisingRouterError.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^RisingRouterHandler)(RisingRouterError *error, BOOL pushed);
+/// 路由的类路由后可选择接受回掉，
+typedef void(^RisingRouterHandleBlock)(RisingRouterRequest *request, BOOL pushed, NSError* _Nullable error);
 
 @interface RisingRouter : NSObject
 
@@ -34,13 +33,13 @@ typedef void(^RisingRouterHandler)(RisingRouterError *error, BOOL pushed);
 /// 通过当前顶VC跳转
 /// @param request 请求
 /// @param completion 请求完成后掉用
-- (void)handleRequest:(RisingRouterRequest *)request completion:(RisingRouterHandler)completion;
+- (void)handleRequest:(RisingRouterRequest *)request complition:(_Nullable RisingRouterHandleBlock)completion;
 
 /// 通过vc跳转
 /// @param request 请求
 /// @param vc 从哪个vc跳转
 /// @param completion 请求完成掉用
-- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandler)completion;
+- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(_Nullable RisingRouterHandleBlock)completion;
 
 @end
 
