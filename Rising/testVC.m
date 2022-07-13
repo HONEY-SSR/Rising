@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.redColor;
+    self.view.backgroundColor = UIColor.grayColor;
 }
 
 + (nonnull NSString *)routerPath {
@@ -35,6 +35,7 @@
         return;
     }
     
+    [vc.navigationController pushViewController:[self.alloc init] animated:YES];
     handler(YES, error);
 }
 

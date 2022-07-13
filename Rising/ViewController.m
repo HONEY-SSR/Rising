@@ -31,13 +31,13 @@
     [RisingRouter.router
      handleRequest:
          [RisingRouterRequest
-          requestWithRouterPath:@"video"
+          requestWithRouterPath:@"vedio/test"
           paramaters:@{
-            @"aa" : @"rising"
+            @"aaa" : @"rising"
          }]
      complition:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
         if (error) {
-            RisingLog(R_error, @"失败%@", error);
+            RisingLog(error.code, @"失败%@", error);
         }
         if (pushed) {
             RisingLog(R_success, @"跳转成功");
