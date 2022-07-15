@@ -7,6 +7,8 @@
 
 #import "RisingSegmentView.h"
 
+#import "RisingSegmentDefaultItem.h"
+
 #import "UIView+Frame.h"
 
 #pragma mark - RisingSegmentViewDelegateFlags
@@ -55,6 +57,9 @@ typedef struct {
 /// 长按的手势
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPress;
 
+/// 避免复杂的计算
+@property (nonatomic) NSInteger currentIndex;
+
 @end
 
 #pragma mark - RisingSegmentView
@@ -84,14 +89,18 @@ typedef struct {
     [self.cview registerClass:segmentClass forCellWithReuseIdentifier:identifier];
 }
 
-// !!!: 未完成
+// !!!: 待验证
 
 - (void)autoLeftWithAnimated:(BOOL)animated {
+    UICollectionViewCell *cell = [self.cview cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentIndex inSection:0]];
     
+    [self.cview setContentOffset:CGPointMake(- (cell.left - self.selectedAutoLeft), 0) animated:animated];
 }
 
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animate {
+    self.currentIndex = index;
     
+    [self autoLeftWithAnimated:animate];
 }
 
 // MARK: SEL
@@ -100,9 +109,6 @@ typedef struct {
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan: {
             NSIndexPath *selectIndexPath = [self.cview indexPathForItemAtPoint:[longPress locationInView:self.cview]];
-            
-            // ???: 是否需要再回掉确定正在搞事情的cell
-//            UICollectionViewCell *cell = [self.cview cellForItemAtIndexPath:selectIndexPath];
             
             [self.cview beginInteractiveMovementForItemAtIndexPath:selectIndexPath];
         } break;
@@ -123,7 +129,7 @@ typedef struct {
 - (UICollectionView *)cview {
     if (_cview == nil) {
         _cview = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
-        
+        [_cview registerClass:RisingSegmentDefaultItem.class forCellWithReuseIdentifier:RisingSegmentDefaultItemReuseIdentifier];
         _cview.delegate = self;
     }
     return _cview;
@@ -150,24 +156,28 @@ typedef struct {
 }
 
 - (void)setDelegate:(id<RisingSegmentViewDelegate>)delegate {
+    if (_delegate == delegate) {
+        return;
+    }
     _delegate = delegate;
-    
+
     _delegateFlags.risingSegmentView_didSelectedAtIndex =
-    [delegate performSelector:@selector(risingSegmentView:didSelectedAtIndex:)];
+    [delegate respondsToSelector:@selector(risingSegmentView:didSelectedAtIndex:)];
 }
 
 - (void)setDataSourse:(id<RisingSegmentViewDataSourse>)dataSourse {
     _dataSourse = dataSourse;
-    _cview.dataSource = self;
     
     _dataSourseFlags.risingSegmentView_segmentViewAtIndex =
-    [dataSourse performSelector:@selector(risingSegmentView:segmentViewAtIndex:)];
+    [dataSourse respondsToSelector:@selector(risingSegmentView:segmentViewAtIndex:)];
     
     _dataSourseFlags.risingSegmentView_canMoveSegmentAtIndex =
-    [dataSourse performSelector:@selector(risingSegmentView:canMoveSegmentAtIndex:)];
+    [dataSourse respondsToSelector:@selector(risingSegmentView:canMoveSegmentAtIndex:)];
     
     _dataSourseFlags.risingSegmentView_moveSegmentAtIndex_toIndex =
-    [dataSourse performSelector:@selector(risingSegmentView:moveSegmentAtIndex:toIndex:)];
+    [dataSourse respondsToSelector:@selector(risingSegmentView:moveSegmentAtIndex:toIndex:)];
+    
+    self.cview.dataSource = self;
 }
 
 - (void)setNeedLongPressToDrag:(BOOL)needLongPressToDrag {
@@ -186,14 +196,15 @@ typedef struct {
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.delegateFlags.risingSegmentView_didSelectedAtIndex) {
-        [self.delegate risingSegmentView:self didSelectedAtIndex:indexPath.row];
+        [self.delegate risingSegmentView:self didSelectedAtIndex:indexPath.item];
     }
 }
 
 #pragma mark - <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.dataSourse numberOfSegmentIn:self];
+
+    return self.dataSourse ? [self.dataSourse numberOfSegmentIn:self] : 0;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -201,25 +212,43 @@ typedef struct {
         return [self.dataSourse risingSegmentView:self segmentViewAtIndex:indexPath.item];
     }
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+    RisingSegmentDefaultItem *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RisingSegmentDefaultItemReuseIdentifier forIndexPath:indexPath];
+    
+    if (self.dataSourse) {
+        [cell withTitle:[self.dataSourse risingSegmentView:self titleForSegmentViewAtIndex:indexPath.item]];
+    }
     
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    return self.dataSourseFlags.risingSegmentView_canMoveSegmentAtIndex ?
+        [self.dataSourse risingSegmentView:self canMoveSegmentAtIndex:indexPath.item] :
+        false;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if (self.dataSourseFlags.risingSegmentView_moveSegmentAtIndex_toIndex) {
+        [self.dataSourse risingSegmentView:self moveSegmentAtIndex:sourceIndexPath.item toIndex:destinationIndexPath.item];
+    }
 }
 
 #pragma mark - <UICollectionViewDelegateFlowLayout>
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.size;
+    return CGSizeMake(40, collectionView.height);
 }
 
-#pragma mark - <UIScrollViewDelegate>
+@end
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+@implementation UICollectionViewFlowLayout (RisingSegmentView)
+
++ (UICollectionViewFlowLayout *)defaultRisingSegmentViewFlowLayout {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
+    return layout;
 }
 
 @end

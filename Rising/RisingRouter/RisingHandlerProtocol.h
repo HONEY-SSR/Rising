@@ -25,7 +25,7 @@ typedef void(^RisingRouterCompletionBlock)(BOOL pushed, NSError * _Nullable erro
 @required
 
 /// 作为被路由的名称，做到不重复，且在文档集中必须提及出来
-@property (nonatomic, readonly, class) NSString *routerPath;
+@property (nonatomic, readonly, class) NSArray <NSString *> *routerPath;
 
 /// 被路由后执行的响应方法，可在内部实现跳转到自己VC
 /// @param parameters 参数

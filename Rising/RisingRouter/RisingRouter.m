@@ -43,7 +43,12 @@ static RisingRouter *_router;
                 if (!class_conformsToProtocol(thisCls, p_handler)) {
                     continue;
                 }
-                self.moduleDic[[(id<RisingHandlerProtocol>)thisCls routerPath]] = thisCls;
+                
+                NSArray <NSString *> *paths = [(id<RisingHandlerProtocol>)thisCls routerPath];
+                for (NSString *routerPath in paths) {
+                    self.moduleDic[routerPath] = thisCls;
+                }
+                
                 break;
             }
         }

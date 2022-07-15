@@ -13,6 +13,8 @@ FOUNDATION_EXPORT NSString *RisingSegmentDefaultItemReuseIdentifier;
 
 @interface RisingSegmentDefaultItem : UICollectionViewCell
 
+- (void)withTitle:(NSString *)title;
+
 @end
 
 NS_ASSUME_NONNULL_END
