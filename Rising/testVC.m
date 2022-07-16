@@ -10,20 +10,18 @@
 #import "RisingFoundationExtention.h"
 
 #import "RisingSegmentView.h"
-
-#import "TestSview.h"
+#import "RisingSegmentDefaultItem.h"
 
 #import "UIView+Frame.h"
 
 @interface testVC () <
     RisingSegmentViewDelegate,
     RisingSegmentViewDataSourse,
-    UIScrollViewDelegate
+    UICollectionViewDelegate,
+    UICollectionViewDataSource
 >
 
 @property (nonatomic, strong) RisingSegmentView *segmentView;
-
-@property (nonatomic, strong) TestSview *sview;
 
 @end
 
@@ -35,20 +33,46 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.grayColor;
     
-//    [self.view addSubview:self.sview];
-    [self.view addSubview:self.segmentView];
+//    [self.view addSubview:self.segmentView];
    
 }
 
-- (TestSview *)sview {
-    if (_sview == nil) {
-        _sview = [[TestSview alloc] initWithFrame:CGRectMake(20, 100, 300, 400)];
-        _sview.backgroundColor = UIColor.orangeColor;
-        _sview.delegate = self;
-        _sview.contentSize = CGSizeMake(600, 800);
-    }
-    return _sview;
+#pragma mark - <UICollectionViewDataSource>
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 50;
 }
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    RisingSegmentDefaultItem *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RisingSegmentDefaultItemReuseIdentifier forIndexPath:indexPath];
+    [cell withTitle:@"Rising"];
+    return cell;
+}
+
+#pragma mark - <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark - <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(100, 200);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -246,8 +246,8 @@ typedef struct {
 
 + (UICollectionViewFlowLayout *)defaultRisingSegmentViewFlowLayout {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 2;
+    layout.minimumInteritemSpacing = 2;
     return layout;
 }
 

@@ -31,7 +31,7 @@
     [RisingRouter.router
      handleRequest:
          [RisingRouterRequest
-          requestWithRouterPath:@"video"
+          requestWithRouterPath:@"video/test"
           parameters:@{
             @"aaa" : @"Aaaa"
          }]
