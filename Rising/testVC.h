@@ -7,11 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RisingHandlerProtocol.h"
+#import "RisingRouterHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface testVC : UIViewController <RisingHandlerProtocol>
+@interface testVC : UIViewController <RisingRouterHandler>
 
 @end
 

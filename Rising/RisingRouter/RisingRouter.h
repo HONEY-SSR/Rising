@@ -12,7 +12,7 @@
 
 #import "RisingUIKitExtention.h"
 
-#import "RisingHandlerProtocol.h"
+#import "RisingRouterHandler.h"
 
 #import "RisingRouterRequest.h"
 

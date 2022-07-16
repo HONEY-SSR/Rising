@@ -33,9 +33,9 @@ static RisingRouter *_router;
         int count = objc_getClassList(NULL, 0);
         Class *classes = (Class *)malloc(sizeof(Class) * count);
         objc_getClassList(classes, count);
-        Protocol *p_handler = @protocol(RisingHandlerProtocol);
+        Protocol *p_handler = @protocol(RisingRouterHandler);
         // ???: 存routerPath的方法是否有待加强
-        for (int i = 0 ; i < count ; ++i) {
+        for (int i = 0; i < count; ++i) {
             Class cls = classes[i];
             for (Class thisCls = cls; thisCls;
                 thisCls = class_getSuperclass(thisCls)) {
@@ -44,7 +44,7 @@ static RisingRouter *_router;
                     continue;
                 }
                 
-                NSArray <NSString *> *paths = [(id<RisingHandlerProtocol>)thisCls routerPath];
+                NSArray <NSString *> *paths = [(id<RisingRouterHandler>)thisCls routerPath];
                 for (NSString *routerPath in paths) {
                     self.moduleDic[routerPath] = thisCls;
                 }
@@ -76,7 +76,7 @@ static RisingRouter *_router;
 
 - (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandleBlock)completion {
     
-    Class <RisingHandlerProtocol> handlerObj = self.moduleDic[request.routerPath];
+    Class <RisingRouterHandler> handlerObj = self.moduleDic[request.routerPath];
     
     if (handlerObj) {
         __block BOOL s_pushed;

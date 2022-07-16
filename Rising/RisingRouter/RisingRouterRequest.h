@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 正常的一种Request
 /// @param routerPath 路由路径
 /// @param paramaters 路由参数
-+ (instancetype)requestWithRouterPath:(NSString *)routerPath paramaters:(NSDictionary * _Nullable)paramaters;
++ (instancetype)requestWithRouterPath:(NSString *)routerPath parameters:(NSDictionary * _Nullable)paramaters;
 
 @end
 

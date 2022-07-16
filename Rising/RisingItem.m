@@ -64,6 +64,13 @@ NSString *RisingItemReuseIdentifier = @"RisingItem";
     return CGSizeMake(80, 100);
 }
 
+#pragma mark - <UIScrollViewDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
+
 
 #pragma mark - Getter
 

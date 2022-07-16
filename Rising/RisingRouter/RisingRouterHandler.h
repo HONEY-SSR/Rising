@@ -1,5 +1,5 @@
 //
-//  RisingHandlerProtocol.h
+//  RisingRouterHandler.h
 //  Rising
 //
 //  Created by SSR on 2022/7/11.
@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 被路由的类可以选择回掉的Block，告知路由类相关的信息
 typedef void(^RisingRouterCompletionBlock)(BOOL pushed, NSError * _Nullable error);
 
-#pragma mark - RisingHandlerProtocol
+#pragma mark - RisingRouterHandler
 
-@protocol RisingHandlerProtocol <NSObject>
+@protocol RisingRouterHandler <NSObject>
 
 @required
 

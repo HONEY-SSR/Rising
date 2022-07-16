@@ -35,7 +35,7 @@
     return request;
 }
 
-+ (instancetype)requestWithRouterPath:(NSString *)routerPath paramaters:(NSDictionary *)paramaters {
++ (instancetype)requestWithRouterPath:(NSString *)routerPath parameters:(NSDictionary *)paramaters {
     if (!routerPath) {
         NSAssert(routerPath, @"routerPath is nil, have a check");
         return nil;

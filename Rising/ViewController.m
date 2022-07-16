@@ -32,12 +32,12 @@
      handleRequest:
          [RisingRouterRequest
           requestWithRouterPath:@"video"
-          paramaters:@{
-            @"aaa" : @"rising"
+          parameters:@{
+            @"aaa" : @"Aaaa"
          }]
      complition:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
         if (error) {
-            RisingLog(error.code, @"失败%@", error);
+            RisingLog(error.code, @"Router Path: \"%@\", error: %@", request.routerPath, error);
         }
         if (pushed) {
             RisingLog(R_success, @"跳转成功");

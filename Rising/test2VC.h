@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface test2VC : UIViewController <RisingHandlerProtocol>
+@interface test2VC : UIViewController <RisingRouterHandler>
 
 @end
 

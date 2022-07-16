@@ -16,9 +16,9 @@
 #import "UIView+Frame.h"
 
 @interface testVC () <
-RisingSegmentViewDelegate,
-RisingSegmentViewDataSourse,
-UIScrollViewDelegate
+    RisingSegmentViewDelegate,
+    RisingSegmentViewDataSourse,
+    UIScrollViewDelegate
 >
 
 @property (nonatomic, strong) RisingSegmentView *segmentView;
@@ -56,28 +56,38 @@ UIScrollViewDelegate
 
 
 
+#pragma mark - RisingRouterHandler
 
 + (NSArray<NSString *> *)routerPath {
     return @[
-        @"video",
-        @"redrock"
+        @"video"
     ];
 }
 
 + (void)responseRequestWithParameters:(NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(RisingRouterCompletionBlock _Nullable)handler {
     NSError *error;
-    if (parameters[@"aaa"] == nil) {
-        error = [NSError errorWithDomain:NSMachErrorDomain code:2 userInfo:parameters];
-        if (handler) {
-            handler(NO, error);
-        }
-        return;
-    }
+    
+//    if (parameters[@"<#key#>"] == <#value#>) {
+//        RisingLogType code = <#R_#>;
+//        error = [NSError errorWithDomain:NSMachErrorDomain code:code userInfo:parameters];
+//        if (handler) {
+//            handler(NO, error);
+//        }
+//        return;
+//    }
 
-    [vc.navigationController pushViewController:[self.alloc init] animated:YES];
+    testVC *selfVC = [[self alloc] init];
+    
+    
+    [vc.navigationController pushViewController:selfVC animated:YES];
     
     handler(YES, error);
 }
+
+
+
+
+
 
 - (RisingSegmentView *)segmentView {
     if (_segmentView == nil) {

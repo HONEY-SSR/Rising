@@ -104,7 +104,7 @@ UICollectionViewDataSource
      handleRequest:
          [RisingRouterRequest
           requestWithRouterPath:@"video"
-          paramaters:@{@"aaa":@"rising"}]
+          parameters:@{@"aaa":@"rising"}]
      fromViewController:vc
      completion:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
         [vc.navigationController pushViewController:[self.alloc init] animated:YES];

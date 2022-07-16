@@ -7,7 +7,7 @@
 //
 
 #import "MGJRouter.h"
-#import <objc/runtime.h>
+//#import <objc/runtime.h>
 
 static NSString * const MGJ_ROUTER_WILDCARD_CHARACTER = @"~";
 static NSString *specialCharacters = @"/?&.";

@@ -77,7 +77,7 @@
 		1470BE6B287970E50000C61E /* RisingSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingSegmentView.m; sourceTree = "<group>"; };
 		1470BE6D287BBB1A0000C61E /* RisingRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouter.h; sourceTree = "<group>"; };
 		1470BE6E287BBB1A0000C61E /* RisingRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouter.m; sourceTree = "<group>"; };
-		1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingHandlerProtocol.h; sourceTree = "<group>"; };
+		1470BE73287BBD420000C61E /* RisingRouterHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterHandler.h; sourceTree = "<group>"; };
 		1470BE74287BC7130000C61E /* testVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testVC.h; sourceTree = "<group>"; };
 		1470BE75287BC7130000C61E /* testVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
 		1470BE7A287C46D10000C61E /* RisingUIKitExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingUIKitExtention.m; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				143333D1287FAD5500BC7E13 /* MGJRouter.m */,
 				1470BE6D287BBB1A0000C61E /* RisingRouter.h */,
 				1470BE6E287BBB1A0000C61E /* RisingRouter.m */,
-				1470BE73287BBD420000C61E /* RisingHandlerProtocol.h */,
+				1470BE73287BBD420000C61E /* RisingRouterHandler.h */,
 				14F777D8287DA8D500358D72 /* RisingRouterRequest.h */,
 				14F777D9287DA8D500358D72 /* RisingRouterRequest.m */,
 			);
