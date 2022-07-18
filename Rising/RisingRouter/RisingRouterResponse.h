@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - ENUM (RisingRouterResponseError)
+
 typedef NS_ENUM(NSUInteger, RisingRouterResponseError) {
     RouterResponseSuccess,      // 成功响应
     
@@ -19,6 +21,8 @@ typedef NS_ENUM(NSUInteger, RisingRouterResponseError) {
     
     RouterWithoutNavagation     // 无栈管理
 };
+
+#pragma mark - RisingRouterResponse
 
 @interface RisingRouterResponse : NSObject
 
@@ -34,9 +38,17 @@ typedef NS_ENUM(NSUInteger, RisingRouterResponseError) {
 /// 错误描述
 @property (nonatomic, copy) NSString *errorDescription;
 
+/// 成功的response
+/// @param isPushed 是否被push，如果只是传值，则不需要
 + (instancetype)responseSuccessPushed:(BOOL)isPushed;
 
-+ (instancetype)responseErrorPushed:(BOOL)isPushed errorCode:(RisingRouterResponseError)code errorDescription:(NSString * _Nullable)responseParameters;
+/// 失败的response
+/// @param isPushed 是否被push
+/// @param code 错误代码
+/// @param description 错误描述
++ (instancetype)responseErrorPushed:(BOOL)isPushed
+                          errorCode:(RisingRouterResponseError)code
+                   errorDescription:(NSString * _Nullable)description;
 
 @end
 
