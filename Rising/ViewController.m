@@ -21,8 +21,6 @@
 
 @property (nonatomic, strong) UIScrollView *sview;
 
-- (void)testFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
-
 @end
 
 #pragma mark - ViewController
@@ -30,31 +28,20 @@
 @implementation ViewController
 
 - (void)push:(UIButton *)sender {
-    [RisingRouter.router
-     handleRequest:
-         [RisingRouterRequest
-          requestWithRouterPath:@"video/test"
-          parameters:@{
-            @"aaa" : @"Aaaa"
-         }]
-     complition:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
-        if (error) {
-        }
-        if (pushed) {
+    [self.router
+     handleRequest:^(RisingRouterRequest * _Nonnull request) {
+        [request appendParameters:@{
+            @"aaa" : @"ssr"
+        }];
+    }
+     complition:^(RisingRouterRequest * _Nonnull request, RisingRouterResponse * _Nonnull response) {
+        if (response.errorCode) {
+            RisingLog(R_error, @"%@", response);
         }
     }];
 }
 
 #pragma mark - Life cycle
-
-- (void)testFormat:(NSString *)format, ... {
-    va_list list;
-    va_start(list, format);
-    NSString *str = [[NSString alloc] initWithFormat:format arguments:list];
-    NSLog(@"%@", str);
-    va_end(list);
-}
-
 
 
 - (void)viewDidLoad {
@@ -67,8 +54,7 @@
     [a addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:a];
     
-    [self testFormat:@"aa - %@", self];
-    
+    RisingLog(R_success, @"rising - %@", self);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

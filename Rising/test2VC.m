@@ -141,16 +141,7 @@ UICollectionViewDataSource
     ];
 }
 
-+ (void)responseRequestWithParameters:(NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(RisingRouterCompletionBlock)handler {
-    [RisingRouter.router
-     handleRequest:
-         [RisingRouterRequest
-          requestWithRouterPath:@"video"
-          parameters:@{@"aaa":@"rising"}]
-     fromViewController:vc
-     completion:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
-        [vc.navigationController pushViewController:[self.alloc init] animated:YES];
-    }];
++ (void)responseRequest:(RisingRouterRequest *)request completion:(RisingRouterResponseBlock)completion {
     
 }
 

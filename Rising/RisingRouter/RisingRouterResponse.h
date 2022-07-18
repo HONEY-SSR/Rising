@@ -14,24 +14,29 @@ typedef NS_ENUM(NSUInteger, RisingRouterResponseError) {
     
     RouterParameterLoss,        // 参数缺失
     RouterParameterMatchFaild,  // 匹配失败
+    RouterParameterClassError,  // 类型错误
     RouterParameterConflict,    // 参数互斥
     
-    RouterChildPushError        // push失败
+    RouterWithoutNavagation     // 无栈管理
 };
 
 @interface RisingRouterResponse : NSObject
 
+/// 响应的类
 @property (nonatomic, nullable) Class responseClass;
 
+/// 是否被push
 @property (nonatomic) BOOL pushed;
 
+/// 错误代码
 @property (nonatomic) RisingRouterResponseError errorCode;
 
-@property (nonatomic, strong, nullable) NSDictionary *responseParameters;
+/// 错误描述
+@property (nonatomic, copy) NSString *errorDescription;
 
 + (instancetype)responseSuccessPushed:(BOOL)isPushed;
 
-+ (instancetype)responseErrorPushed:(BOOL)isPushed errorCode:(RisingRouterResponseError)code suggestPrameters:(NSDictionary * _Nullable)responseParameters;
++ (instancetype)responseErrorPushed:(BOOL)isPushed errorCode:(RisingRouterResponseError)code errorDescription:(NSString * _Nullable)responseParameters;
 
 @end
 

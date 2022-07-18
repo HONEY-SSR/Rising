@@ -19,6 +19,9 @@ static RisingRouter *_router;
 /// 存储所有被路由的类
 @property (nonatomic, strong) NSMutableDictionary <NSString *, Class> *moduleDic;
 
+/// 请求对象
+@property (nonatomic, weak) id requestObj;
+
 @end
 
 #pragma mark - RisingRouter
@@ -70,60 +73,47 @@ static RisingRouter *_router;
 
 #pragma mark - Method
 
-+ (instancetype)laterRequest:(RisingRouterRequest *)request {
-    self.router->_oldRequest = request;
-    return self.router;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-- (void)handleRequest:(RisingRouterRequest *)request complition:(RisingRouterHandleBlock)completion {
+- (void)handleRequest:(RisingRouterRequestBlock)requestBlock
+           complition:(RisingRouterCompletionBlock)completion {
     
-    [self handleRequest:request fromViewController:UIApplication.topViewController completion:completion];
-}
-
-- (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandleBlock)completion {
+    RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
+    if ([self.requestObj isKindOfClass:UIViewController.class]) {
+        request.requestController = self.requestObj;
+    }
     
-    request.requestController = self.oldRequest.requestController;
+    if (requestBlock) {
+        requestBlock(request);
+    }
     
     Class <RisingRouterHandler> handlerObj = self.moduleDic[request.responsePath];
     
     if (handlerObj) {
-        __block BOOL s_pushed;
-        __block NSError *s_error;
+        __block RisingRouterResponse *response;
         
-        [handlerObj responseRequestWithParameters:request.paramaters fromViewController:vc completion:^(BOOL pushed, NSError * _Nullable error){
-            s_pushed = pushed;
-            s_error = error;
+        [handlerObj
+         responseRequest:request
+         completion:^(RisingRouterResponse *responseObj) {
+            response = responseObj;
         }];
         
         if (completion) {
-            completion(request, s_pushed, s_error);
+            completion(request, response);
         }
     } else {
-        NSAssert(handlerObj, @"无Class响应");
+        NSAssert(handlerObj, @"路由失败，无响应对象");
     }
-    
 }
 
 @end
 
+#pragma mark - UIViewController (RisingRouter)
+
 @implementation UIViewController (RisingRouter)
 
 - (RisingRouter *)router {
-    RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
-    request.requestController = self;
-    return [RisingRouter laterRequest:request];
+    RisingRouter *shareRouter = RisingRouter.router;
+    shareRouter.requestObj = self;
+    return shareRouter;
 }
 
 @end

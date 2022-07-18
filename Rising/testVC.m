@@ -89,24 +89,22 @@
     ];
 }
 
-+ (void)responseRequestWithParameters:(NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(RisingRouterCompletionBlock _Nullable)handler {
-    NSError *error;
-    
-    if (!parameters) {
-        [NSString stringWithFormat:@"a"];
-        error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileNoSuchFileError userInfo:parameters];
-        if (handler) {
-            handler(NO, error);
-        }
-        return;
++ (void)responseRequest:(RisingRouterRequest *)request completion:(RisingRouterResponseBlock)completion {
+    NSDictionary *paraDic = request.parameters;
+    NSString *a = [paraDic[@"aaa"] stringValue];
+    if (a) {
+        completion(
+            [RisingRouterResponse
+             responseErrorPushed:NO
+             errorCode:RouterParameterClassError
+             errorDescription:[NSString stringWithFormat:@"%@为%@类型", @"aaa", NSString.class]]);
     }
-
-    testVC *selfVC = [[self alloc] init];
+    if (request.requestController) {
+        [request.requestController.navigationController pushViewController:[self.alloc init] animated:YES];
+    } else {
+        [RisingRouterRequest.useTopController.navigationController pushViewController:[self.alloc init] animated:YES];
+    }
     
-    
-    [vc.navigationController pushViewController:selfVC animated:YES];
-    
-    handler(YES, error);
 }
 
 
