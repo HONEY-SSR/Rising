@@ -16,6 +16,7 @@ static RisingRouter *_router;
 
 @interface RisingRouter ()
 
+/// 存储所有被路由的类
 @property (nonatomic, strong) NSMutableDictionary <NSString *, Class> *moduleDic;
 
 @end
@@ -69,6 +70,23 @@ static RisingRouter *_router;
 
 #pragma mark - Method
 
++ (instancetype)laterRequest:(RisingRouterRequest *)request {
+    self.router->_oldRequest = request;
+    return self.router;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (void)handleRequest:(RisingRouterRequest *)request complition:(RisingRouterHandleBlock)completion {
     
     [self handleRequest:request fromViewController:UIApplication.topViewController completion:completion];
@@ -76,7 +94,9 @@ static RisingRouter *_router;
 
 - (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(RisingRouterHandleBlock)completion {
     
-    Class <RisingRouterHandler> handlerObj = self.moduleDic[request.routerPath];
+    request.requestController = self.oldRequest.requestController;
+    
+    Class <RisingRouterHandler> handlerObj = self.moduleDic[request.responsePath];
     
     if (handlerObj) {
         __block BOOL s_pushed;
@@ -93,7 +113,17 @@ static RisingRouter *_router;
     } else {
         NSAssert(handlerObj, @"无Class响应");
     }
-    // TODO: 通过" / "层级跳转实现
+    
+}
+
+@end
+
+@implementation UIViewController (RisingRouter)
+
+- (RisingRouter *)router {
+    RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
+    request.requestController = self;
+    return [RisingRouter laterRequest:request];
 }
 
 @end

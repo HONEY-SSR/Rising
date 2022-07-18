@@ -33,6 +33,8 @@ typedef void(^RisingRouterCompletionBlock)(BOOL pushed, NSError * _Nullable erro
 /// @param handler 是否传回告知相关信息
 + (void)responseRequestWithParameters:(nullable NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(_Nullable RisingRouterCompletionBlock)handler;
 
++ (void)responseRequest:(RisingRouterRequest *)request completion:(_Nullable RisingRouterCompletionBlock)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

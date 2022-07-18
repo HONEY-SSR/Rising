@@ -28,9 +28,31 @@ typedef void(^RisingRouterHandleBlock)(RisingRouterRequest *request, BOOL pushed
 /// 单例Router
 @property(nonatomic, readonly, class) RisingRouter *router;
 
+/// 用于稍后请求或再次请求
+@property (nonatomic, readonly) RisingRouterRequest *oldRequest;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
+
+/// 稍后请求。使用oldRequest存储
+/// @param request 请求对象
++ (instancetype)laterRequest:(RisingRouterRequest *)request;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /// 通过当前顶VC跳转
 /// @param request 请求
@@ -42,6 +64,12 @@ typedef void(^RisingRouterHandleBlock)(RisingRouterRequest *request, BOOL pushed
 /// @param vc 从哪个vc跳转
 /// @param completion 请求完成掉用
 - (void)handleRequest:(RisingRouterRequest *)request fromViewController:(UIViewController *)vc completion:(_Nullable RisingRouterHandleBlock)completion;
+
+@end
+
+@interface UIViewController (RisingRouter)
+
+@property (nonatomic, readonly) RisingRouter *router;
 
 @end
 

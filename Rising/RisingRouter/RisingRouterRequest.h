@@ -9,7 +9,7 @@
 /// 包括外链到内部的分配算法都在这里解决
 /// TODO: 可以根据路径" / "一个一个push
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,19 +17,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RisingRouterRequest : NSObject
 
-/// 路由抵达路径
-@property (nonatomic, readonly) NSString *routerPath;
+/// 发出请求的Controller，如果为nil，有可能是不需要push
+@property (nonatomic, weak, nullable) UIViewController *requestController;
 
-/// 参数
+/// 使用顶层Controller，如果使用，请确定顶层VC有NavgationController
+@property (nonatomic, readonly, nonnull) UIViewController *useTopController;
+
+/// 路由请求所抵达路径
+@property (nonatomic, copy) NSString *responsePath;
+
+/// 请求发出的所有参数
 @property (nonatomic, readonly, nullable) NSDictionary *paramaters;
-
-- (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
 
 /// 外链转Request
 /// @param url 只要一个URL就够了
-+ (instancetype)requestWithURL:(NSURL *)url;
++ (instancetype)requestWithURL:(NSURL *)url parameters:(NSDictionary *_Nullable)parameters;
 
 /// 正常的一种Request
 /// @param routerPath 路由路径

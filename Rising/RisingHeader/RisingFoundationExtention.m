@@ -8,25 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "RisingFoundationExtention.h"
 
-void RisingTypeLog(RisingLogType R_) {
-    switch (R_) {
-        case R_defualt:
-            printf("⚫️");
-            break;
-        case R_success:
-            printf("🟢");
-            break;
-        case R_warning:
-            printf("🟡");
-            break;
-        case R_error:
-            printf("🔴");
-            break;
-        case R_uncertain:
-            printf("🟤");
-            break;
-        case R_debug:
-            printf("🟣");
-            break;
-    }
+void RisingSingleLog(NSString *format, ...) {
+    va_list list;
+    va_start(list, format);
+    printf("%s\n", [[NSString alloc] initWithFormat:format arguments:list].UTF8String);
+    va_end(list);
 }

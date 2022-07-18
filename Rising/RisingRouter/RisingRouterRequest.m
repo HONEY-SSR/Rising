@@ -11,26 +11,27 @@
 
 @implementation RisingRouterRequest
 
-+ (instancetype)requestWithURL:(NSURL *)url {
++ (instancetype)requestWithURL:(NSURL *)url parameters:(NSDictionary * _Nullable)parameters {
     if (!url) {
         NSAssert(url, @"url is nil, have a check");
         return nil;
     }
     
-    NSMutableDictionary *paramaters = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *para = [[NSMutableDictionary alloc] init];
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:url.absoluteString];
     [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.value && obj.name) {
-            [paramaters setObject:obj.value forKey:obj.name];
+            [para setObject:obj.value forKey:obj.name];
         }
     }];
+    [para addEntriesFromDictionary:parameters];
     
     // !!!: requestPath根据需求自定义，最终肯定是一个代理里面的东西
     NSString *requestPath = [url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
     
     RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
-    request->_routerPath = requestPath;
-    request->_paramaters = paramaters;
+    request->_responsePath = requestPath;
+    request->_paramaters = para;
     
     return request;
 }
@@ -42,7 +43,7 @@
     }
     
     RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
-    request->_routerPath = routerPath;
+    request->_responsePath = routerPath;
     request->_paramaters = paramaters;
     
     return request;

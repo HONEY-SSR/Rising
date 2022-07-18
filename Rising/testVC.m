@@ -12,6 +12,8 @@
 #import "RisingSegmentView.h"
 #import "RisingSegmentDefaultItem.h"
 
+#import "RisingType.h"
+
 #import "UIView+Frame.h"
 
 @interface testVC () <
@@ -29,12 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    RisingLog(R_success, @"加载");
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.grayColor;
     
 //    [self.view addSubview:self.segmentView];
-   
+    NSLog(@"a");
 }
 
 #pragma mark - <UICollectionViewDataSource>
@@ -91,14 +92,14 @@
 + (void)responseRequestWithParameters:(NSDictionary *)parameters fromViewController:(UIViewController *)vc completion:(RisingRouterCompletionBlock _Nullable)handler {
     NSError *error;
     
-//    if (parameters[@"<#key#>"] == <#value#>) {
-//        RisingLogType code = <#R_#>;
-//        error = [NSError errorWithDomain:NSMachErrorDomain code:code userInfo:parameters];
-//        if (handler) {
-//            handler(NO, error);
-//        }
-//        return;
-//    }
+    if (!parameters) {
+        [NSString stringWithFormat:@"a"];
+        error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileNoSuchFileError userInfo:parameters];
+        if (handler) {
+            handler(NO, error);
+        }
+        return;
+    }
 
     testVC *selfVC = [[self alloc] init];
     

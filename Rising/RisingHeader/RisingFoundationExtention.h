@@ -10,26 +10,7 @@
 #ifndef RisingFoundationExtention_h
 #define RisingFoundationExtention_h
 
-#pragma mark - RisingLog
-
-/// RisingLogType
-typedef NS_ENUM(NSUInteger, RisingLogType) {
-    R_defualt = 1,//⚫️
-    R_warning,//🟡
-    R_error,//🔴
-    R_success,//🟢 same of R_OK
-    R_uncertain,//🟤
-    R_debug//🟣
-};
-
-FOUNDATION_EXPORT void RisingTypeLog(RisingLogType R_) NS_NO_TAIL_CALL;
-
-#define RisingLog(R_, format, ...) { \
-    RisingTypeLog(R_); \
-    NSMutableString *str = NSMutableString.string; \
-    [str appendFormat:format, ##__VA_ARGS__]; \
-    printf(" %s %s\n", __func__, str.UTF8String); \
-}
+FOUNDATION_EXPORT void RisingSingleLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2) NS_NO_TAIL_CALL;
 
 #pragma mark - Range
 

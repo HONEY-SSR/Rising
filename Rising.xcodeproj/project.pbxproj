@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */; };
 		143333D928800A7C00BC7E13 /* RisingBookCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143333D828800A7C00BC7E13 /* RisingBookCView.m */; };
+		143333DF2884016400BC7E13 /* RisingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 143333DE2884016400BC7E13 /* RisingType.m */; };
+		143333E22885137600BC7E13 /* RisingRouterResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 143333E12885137600BC7E13 /* RisingRouterResponse.m */; };
 		1470BE63287946200000C61E /* RisingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE62287946200000C61E /* RisingItem.m */; };
 		1470BE662879513C0000C61E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE652879513C0000C61E /* UIView+Frame.m */; };
 		1470BE692879521E0000C61E /* BanchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE682879521E0000C61E /* BanchItem.m */; };
@@ -61,6 +63,10 @@
 		141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingFoundationExtention.m; sourceTree = "<group>"; };
 		143333D728800A7C00BC7E13 /* RisingBookCView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingBookCView.h; sourceTree = "<group>"; };
 		143333D828800A7C00BC7E13 /* RisingBookCView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingBookCView.m; sourceTree = "<group>"; };
+		143333DD2883F9D000BC7E13 /* RisingType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingType.h; sourceTree = "<group>"; };
+		143333DE2884016400BC7E13 /* RisingType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingType.m; sourceTree = "<group>"; };
+		143333E02885137600BC7E13 /* RisingRouterResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterResponse.h; sourceTree = "<group>"; };
+		143333E12885137600BC7E13 /* RisingRouterResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterResponse.m; sourceTree = "<group>"; };
 		1470BE61287946200000C61E /* RisingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingItem.h; sourceTree = "<group>"; };
 		1470BE62287946200000C61E /* RisingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingItem.m; sourceTree = "<group>"; };
 		1470BE642879513C0000C61E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -127,11 +133,13 @@
 		1470BE78287C34360000C61E /* RisingRouter */ = {
 			isa = PBXGroup;
 			children = (
+				1470BE73287BBD420000C61E /* RisingRouterHandler.h */,
 				1470BE6D287BBB1A0000C61E /* RisingRouter.h */,
 				1470BE6E287BBB1A0000C61E /* RisingRouter.m */,
-				1470BE73287BBD420000C61E /* RisingRouterHandler.h */,
 				14F777D8287DA8D500358D72 /* RisingRouterRequest.h */,
 				14F777D9287DA8D500358D72 /* RisingRouterRequest.m */,
+				143333E02885137600BC7E13 /* RisingRouterResponse.h */,
+				143333E12885137600BC7E13 /* RisingRouterResponse.m */,
 			);
 			path = RisingRouter;
 			sourceTree = "<group>";
@@ -185,6 +193,8 @@
 				1470BE79287C343F0000C61E /* RisingHeader */,
 				1470BE6A287970E50000C61E /* RisingSegmentView.h */,
 				1470BE6B287970E50000C61E /* RisingSegmentView.m */,
+				143333DD2883F9D000BC7E13 /* RisingType.h */,
+				143333DE2884016400BC7E13 /* RisingType.m */,
 				14F777D5287D5EC700358D72 /* RisingSegmentDefaultItem.h */,
 				14F777D6287D5EC700358D72 /* RisingSegmentDefaultItem.m */,
 				1470BE642879513C0000C61E /* UIView+Frame.h */,
@@ -330,9 +340,11 @@
 				1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */,
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
 				1470BE662879513C0000C61E /* UIView+Frame.m in Sources */,
+				143333DF2884016400BC7E13 /* RisingType.m in Sources */,
 				1470BE63287946200000C61E /* RisingItem.m in Sources */,
 				14AAB849284C9AE6004BCB5B /* AppDelegate.m in Sources */,
 				1470BE7B287C46D10000C61E /* RisingUIKitExtention.m in Sources */,
+				143333E22885137600BC7E13 /* RisingRouterResponse.m in Sources */,
 				14F777D7287D5EC700358D72 /* RisingSegmentDefaultItem.m in Sources */,
 				14E8ED5D28718646006678B7 /* ClassWeekDictionary.m in Sources */,
 				1470BE76287BC7130000C61E /* testVC.m in Sources */,

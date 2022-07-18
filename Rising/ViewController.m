@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UIScrollView *sview;
 
+- (void)testFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+
 @end
 
 #pragma mark - ViewController
@@ -37,15 +39,23 @@
          }]
      complition:^(RisingRouterRequest * _Nonnull request, BOOL pushed, NSError * _Nullable error) {
         if (error) {
-            RisingLog(error.code, @"Router Path: \"%@\", error: %@", request.routerPath, error);
         }
         if (pushed) {
-            RisingLog(R_success, @"跳转成功");
         }
     }];
 }
 
 #pragma mark - Life cycle
+
+- (void)testFormat:(NSString *)format, ... {
+    va_list list;
+    va_start(list, format);
+    NSString *str = [[NSString alloc] initWithFormat:format arguments:list];
+    NSLog(@"%@", str);
+    va_end(list);
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,7 +66,9 @@
     [a setTitle:@"aaa" forState:UIControlStateNormal];
     [a addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:a];
-    RisingLog(R_success, @"我爱%@", @"Rising");
+    
+    [self testFormat:@"aa - %@", self];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
