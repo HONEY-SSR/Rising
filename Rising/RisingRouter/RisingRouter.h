@@ -18,8 +18,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^RisingRouterRequestBlock)(RisingRouterRequest *request);
-
 /// 路由的类路由后可选择接受回掉，
 typedef void(^RisingRouterCompletionBlock)(RisingRouterRequest *request, RisingRouterResponse *response);
 
@@ -30,23 +28,21 @@ typedef void(^RisingRouterCompletionBlock)(RisingRouterRequest *request, RisingR
 /// 单例Router
 @property(nonatomic, readonly, class) RisingRouter *router;
 
-#pragma mark - Method
-
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)new NS_UNAVAILABLE;
 
 /// 开启路由，使用block进行添加setter
-/// @param requestBlock 初始化请求体
+/// @param request 请求路径
 /// @param completion 路由完成后回掉
-- (void)handleRequest:(_Nullable RisingRouterRequestBlock)requestBlock
+- (void)handleRequest:(RisingRouterRequest *)request
            complition:(_Nullable RisingRouterCompletionBlock)completion;
 
 @end
 
-#pragma mark - UIViewController (RisingRouter)
+#pragma mark - NSObject (RisingRouter)
 
-@interface UIViewController (RisingRouter)
+@interface NSObject (RisingRouter)
 
 @property (nonatomic, readonly) RisingRouter *router;
 

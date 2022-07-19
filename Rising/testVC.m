@@ -99,6 +99,7 @@
              errorCode:RouterParameterClassError
              errorDescription:[NSString stringWithFormat:@"%@为%@类型", @"aaa", NSString.class]]);
     }
+    
     if (request.requestController) {
         [request.requestController.navigationController pushViewController:[self.alloc init] animated:YES];
     } else {

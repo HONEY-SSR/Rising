@@ -29,11 +29,12 @@
 
 - (void)push:(UIButton *)sender {
     [self.router
-     handleRequest:^(RisingRouterRequest * _Nonnull request) {
-        [request appendParameters:@{
+     handleRequest:
+         [RisingRouterRequest
+          requestWithRouterPath:@"video"
+          parameters:@{
             @"aaa" : @"ssr"
-        }];
-    }
+         }]
      complition:^(RisingRouterRequest * _Nonnull request, RisingRouterResponse * _Nonnull response) {
         if (response.errorCode) {
             RisingLog(R_error, @"%@", response);

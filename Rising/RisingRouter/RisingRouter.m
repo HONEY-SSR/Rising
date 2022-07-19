@@ -73,16 +73,11 @@ static RisingRouter *_router;
 
 #pragma mark - Method
 
-- (void)handleRequest:(RisingRouterRequestBlock)requestBlock
+- (void)handleRequest:(RisingRouterRequest *)request
            complition:(RisingRouterCompletionBlock)completion {
     
-    RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
     if ([self.requestObj isKindOfClass:UIViewController.class]) {
         request.requestController = self.requestObj;
-    }
-    
-    if (requestBlock) {
-        requestBlock(request);
     }
     
     Class <RisingRouterHandler> handlerObj = self.moduleDic[request.responsePath];
@@ -106,9 +101,9 @@ static RisingRouter *_router;
 
 @end
 
-#pragma mark - UIViewController (RisingRouter)
+#pragma mark - NSObject (RisingRouter)
 
-@implementation UIViewController (RisingRouter)
+@implementation NSObject (RisingRouter)
 
 - (RisingRouter *)router {
     RisingRouter *shareRouter = RisingRouter.router;
