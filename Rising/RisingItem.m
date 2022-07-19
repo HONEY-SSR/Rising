@@ -7,7 +7,7 @@
 
 #import "RisingItem.h"
 #import "UIView+Frame.h"
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
 #import "BanchItem.h"
 
 NSString *RisingItemReuseIdentifier = @"RisingItem";

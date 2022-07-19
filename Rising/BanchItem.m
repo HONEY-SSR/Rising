@@ -6,7 +6,7 @@
 //
 
 #import "BanchItem.h"
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
 
 NSString *BanchItemReuseIdentifier = @"BanchItem";
 

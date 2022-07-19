@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
 
 #import "RisingRouterRequest.h"
 

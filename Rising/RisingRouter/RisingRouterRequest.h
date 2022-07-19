@@ -37,10 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)new NS_UNAVAILABLE;
 
-/// 新增parameter
-/// @param parameters 新增，但会覆盖以前一样的key
-- (void)appendParameters:(NSDictionary *)parameters;
-
 /// 外链转Request
 /// @param url 只要一个URL就够了
 + (instancetype)requestWithURL:(NSURL *)url parameters:(NSDictionary *_Nullable)parameters;

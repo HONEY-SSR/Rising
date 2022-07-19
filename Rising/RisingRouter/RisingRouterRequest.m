@@ -7,15 +7,7 @@
 
 #import "RisingRouterRequest.h"
 
-#import "RisingUIKitExtention.h"
-
-#pragma mark - RisingRouterRequest ()
-
-@interface RisingRouterRequest ()
-
-@property (nonatomic, strong) NSMutableDictionary *paraMtDic;
-
-@end
+#import "RisingUIKitExtension.h"
 
 #pragma mark - RisingRouterRequest
 
@@ -26,7 +18,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.paraMtDic = NSMutableDictionary.dictionary;
+        self->_parameters = NSMutableDictionary.dictionary;
     }
     return self;
 }
@@ -51,7 +43,7 @@
     
     RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
     request->_responsePath = requestPath;
-    request.paraMtDic = para;
+    request->_parameters = para.copy;
     
     return request;
 }
@@ -64,22 +56,12 @@
     
     RisingRouterRequest *request = [[RisingRouterRequest alloc] init];
     request->_responsePath = routerPath;
-    request.paraMtDic = paramaters.mutableCopy;
+    request->_parameters =paramaters;
     
     return request;
 }
 
-#pragma mark - Method
-
-- (void)appendParameters:(NSDictionary *)parameters {
-    [self.paraMtDic addEntriesFromDictionary:parameters];
-}
-
 #pragma mark - Getter
-
-- (NSDictionary *)parameters {
-    return self.paraMtDic;
-}
 
 + (UIViewController *)useTopController {
     return UIApplication.topViewController;

@@ -7,12 +7,10 @@
 
 #import "testVC.h"
 
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
 
 #import "RisingSegmentView.h"
 #import "RisingSegmentDefaultItem.h"
-
-#import "RisingType.h"
 
 #import "UIView+Frame.h"
 

@@ -1,5 +1,5 @@
 //
-//  RisingFoundationExtention.h
+//  RisingFoundationExtension.h
 //  Rising
 //
 //  Created by SSR on 2022/7/1.
@@ -7,10 +7,17 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RisingType.h"
+#ifndef RisingFoundationExtension_h
+#define RisingFoundationExtension_h
 
-#ifndef RisingFoundationExtention_h
-#define RisingFoundationExtention_h
+typedef const char * RisingLogType;
+
+FOUNDATION_EXPORT RisingLogType R_defualt; // ⚪️
+FOUNDATION_EXPORT RisingLogType R_success; // 🟢
+FOUNDATION_EXPORT RisingLogType R_error;   // 🔴
+FOUNDATION_EXPORT RisingLogType R_warn;    // 🟡
+FOUNDATION_EXPORT RisingLogType R_debug;   // 🔵
+FOUNDATION_EXPORT RisingLogType R_unclear; // 🟣
 
 FOUNDATION_EXPORT void RisingDetailLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2) NS_NO_TAIL_CALL;
 

@@ -1,12 +1,20 @@
 //
-//  RisingFoundationExtention.m
+//  RisingFoundationExtension.m
 //  Rising
 //
 //  Created by SSR on 2022/7/1.
 //
 
 #import <Foundation/Foundation.h>
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
+
+RisingLogType R_defualt = "⚪️";
+RisingLogType R_success = "🟢";
+RisingLogType R_error = "🔴";
+RisingLogType R_warn = "🟡";
+RisingLogType R_debug = "🔵";
+RisingLogType R_unclear = "🟣";
+
 
 void RisingDetailLog(NSString *format, ...) {
     va_list list;

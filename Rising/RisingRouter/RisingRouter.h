@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RisingUIKitExtention.h"
+#import "RisingUIKitExtension.h"
 
 #import "RisingRouterHandler.h"
 

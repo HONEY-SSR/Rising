@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "RisingFoundationExtention.h"
+#import "RisingFoundationExtension.h"
 #import "UIView+Frame.h"
 #import "RisingItem.h"
 
