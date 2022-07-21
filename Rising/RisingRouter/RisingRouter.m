@@ -76,7 +76,7 @@ static RisingRouter *_router;
 - (void)handleRequest:(RisingRouterRequest *)request
            complition:(RisingRouterCompletionBlock)completion {
     
-    if ([self.requestObj isKindOfClass:UIViewController.class]) {
+    if ([self.requestObj isKindOfClass:UIViewController.class] && !request.requestController) {
         request.requestController = self.requestObj;
     }
     

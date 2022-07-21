@@ -31,9 +31,9 @@
     [self.router
      handleRequest:
          [RisingRouterRequest
-          requestWithRouterPath:@"video"
+          requestWithRouterPath:@"<#routerPath#>"
           parameters:@{
-            @"aaa" : @"ssr"
+            @"<#key#>" : @"<#value#>"
          }]
      complition:^(RisingRouterRequest * _Nonnull request, RisingRouterResponse * _Nonnull response) {
         if (response.errorCode) {

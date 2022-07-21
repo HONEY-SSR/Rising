@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RisingUIKitExtension.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - RisingRouterRequest
@@ -20,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Setter
 
 /// 发出请求的Controller，如果为nil，有可能是不需要push
-@property (nonatomic, weak, nullable) UIViewController *requestController;
+@property (nonatomic, weak, nullable) __kindof UIViewController *requestController;
 
 /// 路由请求所抵达路径
 @property (nonatomic, copy) NSString *responsePath;

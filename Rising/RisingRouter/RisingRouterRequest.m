@@ -7,8 +7,6 @@
 
 #import "RisingRouterRequest.h"
 
-#import "RisingUIKitExtension.h"
-
 #pragma mark - RisingRouterRequest
 
 @implementation RisingRouterRequest

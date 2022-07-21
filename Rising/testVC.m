@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.grayColor;
     
-//    [self.view addSubview:self.segmentView];
+    [self.view addSubview:self.segmentView];
     NSLog(@"a");
 }
 
@@ -83,27 +83,45 @@
 
 + (NSArray<NSString *> *)routerPath {
     return @[
-        @"video"
+        @"<#routerPath#>"
     ];
 }
 
 + (void)responseRequest:(RisingRouterRequest *)request completion:(RisingRouterResponseBlock)completion {
-    NSDictionary *paraDic = request.parameters;
-    NSString *a = [paraDic[@"aaa"] stringValue];
-    if (a) {
-        completion(
-            [RisingRouterResponse
-             responseErrorPushed:NO
-             errorCode:RouterParameterClassError
-             errorDescription:[NSString stringWithFormat:@"%@为%@类型", @"aaa", NSString.class]]);
-    }
+//    // check parameters
+//    NSDictionary *paraDic = request.parameters;
+//    NSString *a = [paraDic[@"aaa"] stringValue];
+//    if (a && completion) {
+//        completion(
+//            [RisingRouterResponse
+//             responseErrorPushed:NO
+//             errorCode:RouterParameterClassError
+//             errorDescription:[NSString stringWithFormat:@"%@为%@类型", @"aaa", NSString.class]]);
+//    }
     
     if (request.requestController) {
+        
+        // compare parameters
+        
         [request.requestController.navigationController pushViewController:[self.alloc init] animated:YES];
+        
+        if (completion) {
+            completion(
+                [RisingRouterResponse
+                 responseSuccessPushed:YES]);
+        }
     } else {
-        [RisingRouterRequest.useTopController.navigationController pushViewController:[self.alloc init] animated:YES];
+        
+        // [RisingRouterRequest.useTopController.navigationController pushViewController:[self.alloc init] animated:YES];
+        
+//        if (completion) {
+//            completion(
+//                [RisingRouterResponse
+//                 responseErrorPushed:NO
+//                 errorCode:RouterWithoutNavagation
+//                 errorDescription:nil]);
+//        }
     }
-    
 }
 
 
