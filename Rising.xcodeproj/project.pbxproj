@@ -10,6 +10,7 @@
 		141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B29E4286F1B43008F6FAE /* RisingFoundationExtention.m */; };
 		143333D928800A7C00BC7E13 /* RisingBookCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143333D828800A7C00BC7E13 /* RisingBookCView.m */; };
 		143333E22885137600BC7E13 /* RisingRouterResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 143333E12885137600BC7E13 /* RisingRouterResponse.m */; };
+		1440C102288BF3D700387D6B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1440C101288BF3D700387D6B /* Person.m */; };
 		1470BE63287946200000C61E /* RisingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE62287946200000C61E /* RisingItem.m */; };
 		1470BE662879513C0000C61E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE652879513C0000C61E /* UIView+Frame.m */; };
 		1470BE692879521E0000C61E /* BanchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470BE682879521E0000C61E /* BanchItem.m */; };
@@ -64,6 +65,8 @@
 		143333D828800A7C00BC7E13 /* RisingBookCView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingBookCView.m; sourceTree = "<group>"; };
 		143333E02885137600BC7E13 /* RisingRouterResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingRouterResponse.h; sourceTree = "<group>"; };
 		143333E12885137600BC7E13 /* RisingRouterResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingRouterResponse.m; sourceTree = "<group>"; };
+		1440C100288BF3D700387D6B /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1440C101288BF3D700387D6B /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1470BE61287946200000C61E /* RisingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RisingItem.h; sourceTree = "<group>"; };
 		1470BE62287946200000C61E /* RisingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RisingItem.m; sourceTree = "<group>"; };
 		1470BE642879513C0000C61E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				14AAB848284C9AE6004BCB5B /* AppDelegate.m */,
 				14AAB84D284C9AE6004BCB5B /* ViewController.h */,
 				14AAB84E284C9AE6004BCB5B /* ViewController.m */,
+				1440C100288BF3D700387D6B /* Person.h */,
+				1440C101288BF3D700387D6B /* Person.m */,
 				1470BE74287BC7130000C61E /* testVC.h */,
 				1470BE75287BC7130000C61E /* testVC.m */,
 				14F777DE287EBA5200358D72 /* test2VC.h */,
@@ -332,6 +337,7 @@
 			files = (
 				143333D928800A7C00BC7E13 /* RisingBookCView.m in Sources */,
 				141B29E5286F1B43008F6FAE /* RisingFoundationExtention.m in Sources */,
+				1440C102288BF3D700387D6B /* Person.m in Sources */,
 				1470BE6F287BBB1A0000C61E /* RisingRouter.m in Sources */,
 				14AAB84F284C9AE6004BCB5B /* ViewController.m in Sources */,
 				1470BE662879513C0000C61E /* UIView+Frame.m in Sources */,

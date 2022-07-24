@@ -34,6 +34,8 @@
     
     [self.view addSubview:self.segmentView];
     NSLog(@"a");
+    
+    
 }
 
 #pragma mark - <UICollectionViewDataSource>

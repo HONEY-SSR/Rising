@@ -24,7 +24,7 @@
 @end
 
 #pragma mark - ViewController
-
+#import "Person.h"
 @implementation ViewController
 
 - (void)push:(UIButton *)sender {
@@ -44,18 +44,20 @@
 
 #pragma mark - Life cycle
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self.view addSubview:self.cview];
-    self.view.backgroundColor = UIColor.orangeColor;
-    UIButton *a = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 100, 50)];
-    a.backgroundColor = UIColor.greenColor;
-    [a setTitle:@"aaa" forState:UIControlStateNormal];
-    [a addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:a];
+//    self.view.backgroundColor = UIColor.orangeColor;
+//    UIButton *a = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 100, 50)];
+//    a.backgroundColor = UIColor.greenColor;
+//    [a setTitle:@"aaa" forState:UIControlStateNormal];
+//    [a addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:a];
     
-    RisingLog(R_success, @"rising - %@", self);
+//    RisingLog(R_success, @"rising - %@", self);
+    
+    Person *p = [[Person alloc] init];
+    [p call];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
