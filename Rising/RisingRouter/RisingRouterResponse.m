@@ -11,22 +11,6 @@
 
 @implementation RisingRouterResponse
 
-+ (instancetype)responseSuccessPushed:(BOOL)isPushed {
-    RisingRouterResponse *response = [[RisingRouterResponse alloc] init];
-    response.pushed = isPushed;
-    return response;
-}
-
-+ (instancetype)responseErrorPushed:(BOOL)isPushed
-                          errorCode:(RisingRouterResponseError)code
-                   errorDescription:(NSString *)description; {
-    RisingRouterResponse *response = [[RisingRouterResponse alloc] init];
-    response.pushed = isPushed;
-    response.errorCode = code;
-    response.errorDescription = description;
-    return response;
-}
-
 - (NSString *)description {
     NSMutableString *string = NSMutableString.string;
     
@@ -36,25 +20,23 @@
         [string appendString:@"无响应的类, "];
     }
     
-    [string appendString:self.pushed ? @"已切换页面" : @"未切换页面"];
-    
     switch (self.errorCode) {
         case RouterResponseSuccess: {
             [string appendString:@"响应成功, "];
         } break;
-        case RouterParameterLoss: {
+        case RouterResponseParameterLoss: {
             [string appendString:@"参数缺失, "];
         } break;
-        case RouterParameterMatchFaild: {
+        case RouterResponseParameterMatchFaild: {
             [string appendString:@"匹配失败, "];
         } break;
-        case RouterParameterClassError: {
+        case RouterResponseParameterClassError: {
             [string appendString:@"类型错误, "];
         }
-        case RouterParameterConflict: {
+        case RouterResponseParameterConflict: {
             [string appendString:@"参数互斥, "];
         } break;
-        case RouterWithoutNavagation: {
+        case RouterResponseWithoutNavagation: {
             [string appendString:@"无栈管理, "];
         } break;
     }

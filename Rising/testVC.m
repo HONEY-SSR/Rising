@@ -108,9 +108,9 @@
         [request.requestController.navigationController pushViewController:[self.alloc init] animated:YES];
         
         if (completion) {
-            completion(
-                [RisingRouterResponse
-                 responseSuccessPushed:YES]);
+            RisingRouterResponse *response = [[RisingRouterResponse alloc] init];
+            response.responseController = [self.alloc init];
+            completion(response);
         }
     } else {
         
